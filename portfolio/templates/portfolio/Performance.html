@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="keywords" content="">
     <meta name="description" content="">
-    <title>投資組合</title>
+    <title>績效分析</title>
     <link rel="stylesheet" href="/static/portfolio/nicepage.css" media="screen">
     <link rel="stylesheet" href="/static/portfolio/About.css" media="screen">
     <script class="u-script" type="text/javascript" src="/static/portfolio/jquery.js" defer=""></script>
@@ -120,6 +120,8 @@
     }
   }
     </script>
+        <link rel="icon" href="/static/portfolio/images/logo_money.png"type="image/x-icon"/>
+
 </head>
 
 <body class="u-body u-xl-mode" data-lang="en">
@@ -385,7 +387,7 @@
                 "series": [{
                     name: "報酬率",
                     data: [
-                    {% for k, v in roi.items%}
+                    {% for k, v in roi_periodically.items%}
                     {{v}},
                     {% endfor %}
                 ],

@@ -7,7 +7,6 @@
     <meta name="description" content="">
     <title>Home</title>
     <link rel="stylesheet" href="/static/portfolio/nicepage.css" media="screen">
-    <link rel="stylesheet" href="/static/portfolio/Home.css" media="screen">
     <script class="u-script" type="text/javascript" src="/static/portfolio/jquery.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="/static/portfolio/nicepage.js" defer=""></script>
     <script src="https://code.highcharts.com/highcharts.js"></script>
@@ -22,7 +21,89 @@
     <link id="u-theme-google-font" rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
 
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+      integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw=="
+      crossorigin="anonymous" />
+    <style>
+      /* common */
+  
+      .container {
+        display: flex;
+        justify-content: center;
+        margin: 5vh 10vw 5vh 10vw;
+      }
+  
+      .row {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+      }
+  
+      .col {
+        display: flex;
+        flex-direction: column;
+      }
+  
+      .center {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+  
+      .justify-center {
+        justify-content: center;
+      }
+  
+      .justify-around {
+        justify-content: space-around;
+      }
+  
+      .justify-between {
+        justify-content: space-between;
+      }
+  
+      .align-center {
+        align-items: center;
+      }
+  
+      button[type="submit"] {
+        display: block;
+        background-color: white;
+        border-color: transparent;
+        border-radius: 10px;
+        box-shadow: 0px 0px 3px black;
+        padding: 3px 30px;
+        margin: 20px 0;
+      }
+  
+      button[type="submit"]:active {
+        color: white;
+        background-color: black;
+      }
+  
+      footer {
+        position: absolute;
+        width: 100vw;
+        bottom: -3em;
+      }
+  
+      /* questionnaire */
+  
+      main {
+        background-image: url("/static/portfolio/images/questionnaire-background.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+  
+      .u-section-1 {
+        margin: 5vh 10vw;
+      }
+  
+      footer {
+        bottom: -10em;
+      }
+    </style>
     <script type="application/ld+json">{
         "@context": "http://schema.org",
         "@type": "Organization",
@@ -34,122 +115,106 @@
     <meta property="og:type" content="website">
 </head>
 <body class="u-body u-xl-mode" data-lang="en">
-<header class="u-box-shadow u-clearfix u-header u-sticky u-sticky-4220 u-white u-header" id="sec-f997" data-animation-name=""
-        data-animation-duration="0" data-animation-delay="0" data-animation-direction="">
+  <header class="u-box-shadow u-clearfix u-header u-sticky u-sticky-4220 u-white u-header" id="sec-f997" data-animation-name=""
+    data-animation-duration="0" data-animation-delay="0" data-animation-direction="">
     <div class="u-clearfix u-sheet u-sheet-1">
-        <a href="/portfolio/home" class="u-image u-logo u-image-1" data-image-width="1920" data-image-height="1080"
-           title="Home">
-            <img src="/static/portfolio/images/logo_pig.png" class="u-logo-image u-logo-image-1">
-        </a>
-        <nav class="u-menu u-menu-one-level u-offcanvas u-menu-1">
-            <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px;">
-                <a class="u-button-style u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
-                   href="#">
-                    <svg class="u-svg-link" viewBox="0 0 24 24">
-                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use>
-                    </svg>
-                    <svg class="u-svg-content" version="1.1" id="menu-hamburger" viewBox="0 0 16 16" x="0px" y="0px"
-                         xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
-                        <g>
-                            <rect y="1" width="16" height="2"></rect>
-                            <rect y="7" width="16" height="2"></rect>
-                            <rect y="13" width="16" height="2"></rect>
-                        </g>
-                    </svg>
-                </a>
-            </div>
-            <div class="u-custom-menu u-nav-container">
-                <ul class="u-nav u-unstyled u-nav-1">
-                    <li class="u-nav-item"><a
-                            class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
-                            href="/portfolio/about" style="padding: 26px 20px;">關於我們</a>
-                    </li>
-                    <li class="u-nav-item"><a
-                            class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
-                            href="/portfolio/questionnaire" style="padding: 26px 20px;">問卷試算</a>
-                        <div class="u-nav-popup">
-                            <ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10">
-                                <li class="u-nav-item"><a class="u-button-style u-nav-link u-white" href="#">SingIn</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="u-nav-item"><a
-                            class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
-                            href="/portfolio/calculation" style="padding: 26px 20px;">試算</a>
-                    </li>
-                    <li class="u-nav-item"><a
-                            class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
-                            href="/portfolio/signUp" style="padding: 26px 20px;">註冊</a>
-                    </li>
-                    <li class="u-nav-item"><a
-                            class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
-                            href="/portfolio/signIn" style="padding: 26px 20px;">登入</a>
-                    </li>
-                    <li class="u-nav-item"><a
-                            class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
-                            href="/portfolio/signOut" style="padding: 26px 20px;">登出</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="u-custom-menu u-nav-container-collapse">
-                <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
-                    <div class="u-inner-container-layout u-sidenav-overflow">
-                        <div class="u-menu-close"></div>
-                        <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-3">
-                            <li class="u-nav-item"><a class="u-button-style u-nav-link" href="/portfolio/about">關於我們</a>
-                            </li>
-                            <li class="u-nav-item"><a class="u-button-style u-nav-link" href="/portfolio/questionnaire">問卷試算</a>
-                            </li>
-                            <li class="u-nav-item"><a class="u-button-style u-nav-link"
-                                                      href="/portfolio/calculation">試算</a></li>
-                            <li class="u-nav-item"><a class="u-button-style u-nav-link" href="/portfolio/signUp">註冊</a>
-                            </li>
-                            <li class="u-nav-item"><a class="u-button-style u-nav-link" href="/portfolio/signIn">登入</a>
-                            </li>
-                            <li class="u-nav-item"><a class="u-button-style u-nav-link" href="/portfolio/signOut">登出</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
-            </div>
-        </nav>
+      <a href="/portfolio/home" class="u-image u-logo u-image-1" data-image-width="1920" data-image-height="1080"
+        title="Home">
+          <img src="/static/portfolio/images/logo_pig.png" class="u-logo-image u-logo-image-1">
+      </a>
+      <nav class="u-menu u-menu-one-level u-offcanvas u-menu-1">
+          <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px;">
+              <a class="u-button-style u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
+                href="#">
+                  <svg class="u-svg-link" viewBox="0 0 24 24">
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use>
+                  </svg>
+                  <svg class="u-svg-content" version="1.1" id="menu-hamburger" viewBox="0 0 16 16" x="0px" y="0px"
+                      xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+                      <g>
+                          <rect y="1" width="16" height="2"></rect>
+                          <rect y="7" width="16" height="2"></rect>
+                          <rect y="13" width="16" height="2"></rect>
+                      </g>
+                  </svg>
+              </a>
+          </div>
+          <div class="u-custom-menu u-nav-container">
+              <ul class="u-nav u-unstyled u-nav-1">
+                  <li class="u-nav-item"><a
+                          class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
+                          href="/portfolio/about" style="padding: 26px 20px;">關於我們</a>
+                  </li>
+                  <li class="u-nav-item"><a
+                          class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
+                          href="/portfolio/questionnaire" style="padding: 26px 20px;">問卷試算</a>
+                      <div class="u-nav-popup">
+                          <ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10">
+                              <li class="u-nav-item"><a class="u-button-style u-nav-link u-white" href="#">SingIn</a>
+                              </li>
+                          </ul>
+                      </div>
+                  </li>
+                  <li class="u-nav-item"><a
+                          class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
+                          href="/portfolio/calculation" style="padding: 26px 20px;">試算</a>
+                  </li>
+                  <li class="u-nav-item"><a
+                          class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
+                          href="/portfolio/signUp" style="padding: 26px 20px;">註冊</a>
+                  </li>
+                  <li class="u-nav-item"><a
+                          class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
+                          href="/portfolio/signIn" style="padding: 26px 20px;">登入</a>
+                  </li>
+                  <li class="u-nav-item"><a
+                          class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
+                          href="/portfolio/signOut" style="padding: 26px 20px;">登出</a>
+                  </li>
+              </ul>
+          </div>
+          <div class="u-custom-menu u-nav-container-collapse">
+              <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
+                  <div class="u-inner-container-layout u-sidenav-overflow">
+                      <div class="u-menu-close"></div>
+                      <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-3">
+                          <li class="u-nav-item"><a class="u-button-style u-nav-link" href="/portfolio/about">關於我們</a>
+                          </li>
+                          <li class="u-nav-item"><a class="u-button-style u-nav-link" href="/portfolio/questionnaire">問卷試算</a>
+                          </li>
+                          <li class="u-nav-item"><a class="u-button-style u-nav-link"
+                                                    href="/portfolio/calculation">試算</a></li>
+                          <li class="u-nav-item"><a class="u-button-style u-nav-link" href="/portfolio/signUp">註冊</a>
+                          </li>
+                          <li class="u-nav-item"><a class="u-button-style u-nav-link" href="/portfolio/signIn">登入</a>
+                          </li>
+                          <li class="u-nav-item"><a class="u-button-style u-nav-link" href="/portfolio/signOut">登出</a>
+                          </li>
+                      </ul>
+                  </div>
+              </div>
+              <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
+          </div>
+      </nav>
     </div>
-</header>
-<section class="u-clearfix u-section-1" id="sec-059d">
-    <div class="u-clearfix u-sheet u-sheet-1">
+  </header>
+  <main>
+    <section class="u-clearfix u-section-1" id="sec-059d">
+      <div class="u-clearfix u-sheet u-sheet-1 animate__animated animate__fadeInUp">
         <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
-            <div class="u-layout">
-                <div class="u-layout-row">
-                    <!--                    <div class="u-container-style u-image u-layout-cell u-size-30 u-image-1" data-image-width="1284"-->
-                    <!--                         data-image-height="576">-->
-                    <!--                        <div class="u-container-layout u-container-layout-1"></div>-->
-                    <!--                    </div>-->
-                    <!--                    <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-2">-->
-                    <!--                        <div class="u-container-layout u-valign-middle-xs u-container-layout-2">-->
-                    <!--                            <img class="u-image u-image-default u-image-2"-->
-                    <!--                                 src="/static/portfolio/images/5082d6d5-6145-d7f3-0583-9b9704a0a7f7.png" alt=""-->
-                    <!--                                 data-image-width="922" data-image-height="337">-->
-                    <!--&lt;!&ndash;                            <h3 class="u-text u-text-default u-text-1">即刻加入智能撲滿<br>&ndash;&gt;-->
-                    <!--&lt;!&ndash;                                <br>無上限試算最適合你的投資組合&ndash;&gt;-->
-                    <!--&lt;!&ndash;                            </h3>&ndash;&gt;-->
-                    <!--                        </div>-->
-                    <!--                    </div>-->
-                    <div>
-                        <form action="#" method="post">
-
-                            {% csrf_token %}
-                            {{form}}
-                            </br>
-                            <input type="submit" value="送出"/>
-                        </form>
-                    </div>
-                </div>
+          <div class="u-layout">
+            <div>
+              <form action="#" method="post">
+                {% csrf_token %}
+                {{form}}
+                <button type="submit">送出</button>
+              </form>
             </div>
+          </div>
         </div>
-    </div>
-</section>
+      </div>
+    </section>
+  </main>
 <!--<section class="u-clearfix u-palette-3-light-3 u-section-2" id="sec-f06c">-->
 <!--    <div class="u-clearfix u-sheet u-sheet-1">-->
 <!--        <div class="u-clearfix u-gutter-0 u-layout-wrap u-layout-wrap-1">-->

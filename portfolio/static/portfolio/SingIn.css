@@ -93,21 +93,6 @@
   align-items: center;
 }
 
-button[type="submit"] {
-  display: block;
-  background-color: white;
-  border-color: transparent;
-  border-radius: 10px;
-  box-shadow: 0px 0px 3px black;
-  padding: 3px 30px;
-  margin: 20px 0;
-}
-
-button[type="submit"]:active {
-  color: white;
-  background-color: black;
-}
-
 footer {
   position: absolute;
   width: 100vw;
@@ -279,7 +264,7 @@ label {
 }
 
 input {
-  width: 70%;
+  width: 75%;
   padding: 5px 0;
   border: 2px black dashed;
   border-radius: 7px;
@@ -304,8 +289,9 @@ input {
 
 .purple-cross {
   position: absolute;
-  right: 13%;
-  bottom: 30%;
+  right: 10%;
+  bottom: 5%;
+  z-index: 1000;
 }
 
 .pink-diamond {

@@ -1,320 +1,314 @@
 <!DOCTYPE html>
 <html style="font-size: 16px;" lang="en">
+
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="utf-8">
-    <meta name="keywords" content="">
-    <meta name="description" content="">
-    <title>智能撲滿</title>
-    <link rel="stylesheet" href="/static/portfolio/nicepage.css" media="screen">
-    <link rel="stylesheet" href="/static/portfolio/Home.css" media="screen">
-    <script class="u-script" type="text/javascript" src="/static/portfolio/jquery.js" defer=""></script>
-    <script class="u-script" type="text/javascript" src="/static/portfolio/nicepage.js" defer=""></script>
-    <script src="https://code.highcharts.com/highcharts.js"></script>
-    <script src="https://code.highcharts.com/modules/exporting.js"></script>
-    <script src="https://code.highcharts.com/modules/export-data.js"></script>
-    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
-    <script src="https://code.highcharts.com/stock/highstock.js"></script>
-    <script src="https://code.highcharts.com/stock/highstock.js"></script>
-    <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
-    <script type="text/javascript" src="https://www.highcharts.com/samples/data/usdeur.js"></script>
-    <meta name="generator" content="Nicepage 4.21.12, nicepage.com">
-    <link id="u-theme-google-font" rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <title>智能撲滿</title>
+  <link rel="stylesheet" href="/static/portfolio/nicepage.css" media="screen">
+  <link rel="stylesheet" href="/static/portfolio/Home.css" media="screen">
+  <script class="u-script" type="text/javascript" src="/static/portfolio/jquery.js" defer=""></script>
+  <script class="u-script" type="text/javascript" src="/static/portfolio/nicepage.js" defer=""></script>
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/modules/exporting.js"></script>
+  <script src="https://code.highcharts.com/modules/export-data.js"></script>
+  <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+  <script src="https://code.highcharts.com/stock/highstock.js"></script>
+  <script src="https://code.highcharts.com/stock/highstock.js"></script>
+  <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
+  <script type="text/javascript" src="https://www.highcharts.com/samples/data/usdeur.js"></script>
+  <meta name="generator" content="Nicepage 4.21.12, nicepage.com">
+  <link id="u-theme-google-font" rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-          integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw=="
-          crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw=="
+    crossorigin="anonymous" />
 
-    <style>
-        /* diamond */
+  <style>
+    /* diamond */
 
-        .yellow-diamond {
-            width: 20px;
-            height: 20px;
-            background-image: url("/static/portfolio/images/yellow-diamond.png");
-            background-repeat: no-repeat;
-            animation: diamond-rotate 2s infinite linear;
-        }
+    .yellow-diamond {
+      width: 20px;
+      height: 20px;
+      background-image: url("/static/portfolio/images/yellow-diamond.png");
+      background-repeat: no-repeat;
+      animation: diamond-rotate 2s infinite linear;
+    }
 
-        .red-diamond {
-            width: 20px;
-            height: 20px;
-            background-image: url("/static/portfolio/images/red-diamond.png");
-            background-repeat: no-repeat;
-            animation: diamond-rotate 2s infinite linear;
-        }
+    .red-diamond {
+      width: 20px;
+      height: 20px;
+      background-image: url("/static/portfolio/images/red-diamond.png");
+      background-repeat: no-repeat;
+      animation: diamond-rotate 2s infinite linear;
+    }
 
-        .purple-cross {
-            width: 20px;
-            height: 20px;
-            background-image: url("/static/portfolio/images/purple-cross.png");
-            background-repeat: no-repeat;
-            animation: diamond-rotate 2s infinite linear;
-        }
+    .purple-cross {
+      width: 20px;
+      height: 20px;
+      background-image: url("/static/portfolio/images/purple-cross.png");
+      background-repeat: no-repeat;
+      animation: diamond-rotate 2s infinite linear;
+    }
 
-        .pink-diamond {
-            width: 20px;
-            height: 20px;
-            background-image: url("/static/portfolio/images/pink-diamond.png");
-            background-repeat: no-repeat;
-            animation: diamond-rotate 2s infinite linear;
-        }
+    .pink-diamond {
+      width: 20px;
+      height: 20px;
+      background-image: url("/static/portfolio/images/pink-diamond.png");
+      background-repeat: no-repeat;
+      animation: diamond-rotate 2s infinite linear;
+    }
 
-        .purple-diamond {
-            width: 20px;
-            height: 20px;
-            background-image: url("/static/portfolio/images/purple-diamond.png");
-            background-repeat: no-repeat;
-            animation: diamond-rotate 2s infinite linear;
-        }
+    .purple-diamond {
+      width: 20px;
+      height: 20px;
+      background-image: url("/static/portfolio/images/purple-diamond.png");
+      background-repeat: no-repeat;
+      animation: diamond-rotate 2s infinite linear;
+    }
 
-        /* animation */
+    /* animation */
 
-        @keyframes diamond-rotate {
-            from {
-                transform: rotate(0deg);
-            }
+    @keyframes diamond-rotate {
+      from {
+        transform: rotate(0deg);
+      }
 
-            to {
-                transform: rotate(359deg);
-            }
-        }
+      to {
+        transform: rotate(359deg);
+      }
+    }
 
-        /* common */
+    /* common */
 
-        .container {
-            display: flex;
-            justify-content: center;
-            margin: 5vh 10vw 5vh 10vw;
-        }
+    .container {
+      display: flex;
+      justify-content: center;
+      margin: 5vh 10vw 5vh 10vw;
+    }
 
-        .row {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-        }
+    .row {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
 
-        .col {
-            display: flex;
-            flex-direction: column;
-        }
+    .col {
+      display: flex;
+      flex-direction: column;
+    }
 
-        .center {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+    .center {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-        .justify-center {
-            justify-content: center;
-        }
+    .justify-center {
+      justify-content: center;
+    }
 
-        .justify-around {
-            justify-content: space-around;
-        }
+    .justify-around {
+      justify-content: space-around;
+    }
 
-        .justify-between {
-            justify-content: space-between;
-        }
+    .justify-between {
+      justify-content: space-between;
+    }
 
-        .align-center {
-            align-items: center;
-        }
+    .align-center {
+      align-items: center;
+    }
 
-        button[type="submit"] {
-            display: block;
-            background-color: white;
-            border-color: transparent;
-            border-radius: 10px;
-            box-shadow: 0px 0px 3px black;
-            padding: 3px 30px;
-            margin: 20px 0;
-        }
+    button[type="submit"] {
+      display: block;
+      background-color: white;
+      border-color: transparent;
+      border-radius: 10px;
+      box-shadow: 0px 0px 3px black;
+      padding: 3px 30px;
+      margin: 20px 0;
+    }
 
-        button[type="submit"]:active {
-            color: white;
-            background-color: black;
-        }
+    button[type="submit"]:active {
+      color: white;
+      background-color: black;
+    }
 
-        footer {
-            position: absolute;
-            width: 100vw;
-            bottom: -3em;
-        }
+    footer {
+      position: absolute;
+      width: 100vw;
+      bottom: -3em;
+    }
 
-        /* home */
-        
-        .u-section-1{
+    /* home */
+
+    /* .u-section-1{
             background: url("/static/portfolio/images/home-background.png");
             background-repeat: no-repeat;
             background-position: bottom 0 left 0;
-        }
+        } */
 
-        .u-section-2 .u-layout-row{
-            opacity: 0;
-        }
+    .u-section-2 .u-layout-row {
+      opacity: 0;
+    }
 
-        .yellow-diamond{
-            position: absolute;
-            top: 10vh;
-            right: 45vw;
-        }
+    .yellow-diamond {
+      position: absolute;
+      top: 10vh;
+      right: 45vw;
+    }
 
-        .red-diamond{
-            position: absolute;
-            top: 15vh;
-            right: 15vw;
-        }
+    .red-diamond {
+      position: absolute;
+      top: 15vh;
+      right: 15vw;
+    }
 
-        .purple-cross{
-            position: absolute;
-            bottom: 15vh;
-            right: 40vw;
-        }
+    .purple-cross {
+      position: absolute;
+      bottom: 15vh;
+      right: 40vw;
+    }
 
-        .pink-diamond{
-            position: absolute;
-            bottom: 30vh;
-            left: 10vw;
-        }
+    .pink-diamond {
+      position: absolute;
+      bottom: 30vh;
+      left: 10vw;
+    }
 
-        .purple-diamond{
-            position: absolute;
-            top: 40vh;
-            right: 10vw;
-        }
-    </style>
+    .purple-diamond {
+      position: absolute;
+      top: 40vh;
+      right: 10vw;
+    }
+  </style>
 
-    <script type="application/ld+json">{
+  <script type="application/ld+json">{
         "@context": "http://schema.org",
         "@type": "Organization",
         "name": "",
         "logo": "images/logo_pig.png"
     }</script>
-    <meta name="theme-color" content="#478ac9">
-    <meta property="og:title" content="Home">
-    <meta property="og:type" content="website">
-</head>
-<body class="u-body u-xl-mode" data-lang="en">
-<header class="u-box-shadow u-clearfix u-header u-sticky u-sticky-4220 u-white u-header" id="sec-f997" data-animation-name=""
-        data-animation-duration="0" data-animation-delay="0" data-animation-direction="">
-        
-    <div class="u-clearfix u-sheet u-sheet-1">
-        <a href="/portfolio/home" class="u-image u-logo u-image-1" data-image-width="1920" data-image-height="1080"
-           title="Home">
-            <img src="/static/portfolio/images/logo_pig.png" class="u-logo-image u-logo-image-1">
-        </a>
-        <nav class="u-menu u-menu-one-level u-offcanvas u-menu-1">
-            <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px;">
-                <a class="u-button-style u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
-                   href="#">
-                    <svg class="u-svg-link" viewBox="0 0 24 24">
-                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use>
-                    </svg>
-                    <svg class="u-svg-content" version="1.1" id="menu-hamburger" viewBox="0 0 16 16" x="0px" y="0px"
-                         xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
-                        <g>
-                            <rect y="1" width="16" height="2"></rect>
-                            <rect y="7" width="16" height="2"></rect>
-                            <rect y="13" width="16" height="2"></rect>
-                        </g>
-                    </svg>
-                </a>
-            </div>
-            <div class="u-custom-menu u-nav-container">
-                <ul class="u-nav u-unstyled u-nav-1">
-                    <li class="u-nav-item"><a
-                            class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
-                            href="/portfolio/about" style="padding: 26px 20px;">關於我們</a>
-                    </li>
-                    <li class="u-nav-item"><a
-                            class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
-                            href="/portfolio/questionnaire" style="padding: 26px 20px;">問卷試算</a>
-                        <div class="u-nav-popup">
-                            <ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10">
-                                <li class="u-nav-item"><a class="u-button-style u-nav-link u-white" href="#">SingIn</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="u-nav-item"><a
-                            class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
-                            href="/portfolio/calculation" style="padding: 26px 20px;">試算</a>
-                    </li>
-                    <li class="u-nav-item"><a
-                            class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
-                            href="/portfolio/signUp" style="padding: 26px 20px;">註冊</a>
-                    </li>
-                    <li class="u-nav-item"><a
-                            class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
-                            href="/portfolio/signIn" style="padding: 26px 20px;">登入</a>
-                    </li>
-                    <li class="u-nav-item"><a
-                            class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
-                            href="/portfolio/signOut" style="padding: 26px 20px;">登出</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="u-custom-menu u-nav-container-collapse">
-                <div class="u-black u-container-style u-inner-container-layout u-sidenav">
-                    <div class="u-inner-container-layout u-sidenav-overflow">
-                        <div class="u-menu-close"></div>
-                        <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-3">
-                            <li class="u-nav-item"><a class="u-button-style u-nav-link" href="/portfolio/about">關於我們</a></li>
-                            <li class="u-nav-item"><a class="u-button-style u-nav-link" href="/portfolio/questionnaire">問卷試算</a></li>
-                            <li class="u-nav-item"><a class="u-button-style u-nav-link" href="/portfolio/calculation">試算</a></li>
-                            <li class="u-nav-item"><a class="u-button-style u-nav-link" href="/portfolio/signUp">註冊</a></li>
-                            <li class="u-nav-item"><a class="u-button-style u-nav-link" href="/portfolio/signIn">登入</a></li>
-                            <li class="u-nav-item"><a class="u-button-style u-nav-link" href="/portfolio/signOut">登出</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
-            </div>
-        </nav>
-    </div>
-</header>
+  <meta name="theme-color" content="#478ac9">
+  <meta property="og:title" content="Home">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="/static/portfolio/images/logo_money.png" type="image/x-icon" />
 
-<main>
+</head>
+
+<body class="u-body u-xl-mode" data-lang="en">
+  <header class="u-box-shadow u-clearfix u-header u-sticky u-sticky-4220 u-white u-header" id="sec-f997"
+    data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">
+
+    <div class="u-clearfix u-sheet u-sheet-1">
+      <a href="/portfolio/home" class="u-image u-logo u-image-1" data-image-width="1920" data-image-height="1080"
+        title="Home">
+        <img src="/static/portfolio/images/logo_pig.png" class="u-logo-image u-logo-image-1">
+      </a>
+      <nav class="u-menu u-menu-one-level u-offcanvas u-menu-1">
+        <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px;">
+          <a class="u-button-style u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
+            href="#">
+            <svg class="u-svg-link" viewBox="0 0 24 24">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use>
+            </svg>
+            <svg class="u-svg-content" version="1.1" id="menu-hamburger" viewBox="0 0 16 16" x="0px" y="0px"
+              xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+              <g>
+                <rect y="1" width="16" height="2"></rect>
+                <rect y="7" width="16" height="2"></rect>
+                <rect y="13" width="16" height="2"></rect>
+              </g>
+            </svg>
+          </a>
+        </div>
+        <div class="u-custom-menu u-nav-container">
+          <ul class="u-nav u-unstyled u-nav-1">
+            <li class="u-nav-item"><a
+                class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
+                href="/portfolio/about" style="padding: 26px 20px;">關於我們</a>
+            </li>
+            <li class="u-nav-item"><a
+                class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
+                href="/portfolio/questionnaire" style="padding: 26px 20px;">問卷試算</a>
+              <div class="u-nav-popup">
+                <ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10">
+                  <li class="u-nav-item"><a class="u-button-style u-nav-link u-white" href="#">SingIn</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="u-nav-item"><a
+                class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
+                href="/portfolio/calculation" style="padding: 26px 20px;">試算</a>
+            </li>
+            <li class="u-nav-item"><a
+                class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
+                href="/portfolio/signUp" style="padding: 26px 20px;">註冊</a>
+            </li>
+            <li class="u-nav-item"><a
+                class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
+                href="/portfolio/signIn" style="padding: 26px 20px;">登入</a>
+            </li>
+            <li class="u-nav-item"><a
+                class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
+                href="/portfolio/signOut" style="padding: 26px 20px;">登出</a>
+            </li>
+          </ul>
+        </div>
+        <div class="u-custom-menu u-nav-container-collapse">
+          <div class="u-black u-container-style u-inner-container-layout u-sidenav">
+            <div class="u-inner-container-layout u-sidenav-overflow">
+              <div class="u-menu-close"></div>
+              <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-3">
+                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="/portfolio/about">關於我們</a></li>
+                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="/portfolio/questionnaire">問卷試算</a>
+                </li>
+                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="/portfolio/calculation">試算</a></li>
+                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="/portfolio/signUp">註冊</a></li>
+                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="/portfolio/signIn">登入</a></li>
+                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="/portfolio/signOut">登出</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
     <section class="u-clearfix u-section-1" id="sec-c439">
-        <div class="red-diamond"></div>
-        <div class="yellow-diamond"></div>
-        <div class="purple-cross"></div>
-        <div class="purple-diamond"></div>
-        <div class="pink-diamond"></div>
-        <div class="u-clearfix u-sheet u-sheet-1">
-          <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
-            <div class="u-layout">
-              <div class="u-layout-row">
-                <div
-                  id="home-hero"
-                  class="u-container-style u-image u-layout-cell u-size-30 u-image-1 animate__animated animate__fadeInLeft"
-                  data-image-width="1284"
-                  data-image-height="576"
-                >
-                  <div class="u-container-layout u-container-layout-1"></div>
-                </div>
-                <div
-                  class="u-container-style u-layout-cell u-size-30 u-layout-cell-2"
-                >
-                  <div
-                    class="u-container-layout u-valign-middle-xs u-container-layout-2"
-                  >
-                    <img
-                      class="u-image u-image-default u-image-2 animate__animated animate__fadeInUp"
-                      src="/static/portfolio/images/5082d6d5-6145-d7f3-0583-9b9704a0a7f7.png"
-                      alt=""
-                      data-image-width="922"
-                      data-image-height="337"
-                    />
-                    <!--<h3 class="u-text u-text-default u-text-1">即刻加入智能撲滿<br>-->
-                    <!--<br>無上限試算最適合你的投資組合-->
-                    <!--</h3>-->
-                  </div>
+      <div class="red-diamond"></div>
+      <div class="yellow-diamond"></div>
+      <div class="purple-cross"></div>
+      <div class="purple-diamond"></div>
+      <div class="pink-diamond"></div>
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
+          <div class="u-layout">
+            <div class="u-layout-row">
+              <div id="home-hero"
+                class="u-container-style u-image u-layout-cell u-size-30 u-image-1 animate__animated animate__fadeInLeft"
+                data-image-width="1284" data-image-height="576">
+                <div class="u-container-layout u-container-layout-1"></div>
+              </div>
+              <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-2">
+                <div class="u-container-layout u-valign-middle-xs u-container-layout-2">
+                  <img class="u-image u-image-default u-image-2 animate__animated animate__fadeInUp"
+                    src="/static/portfolio/images/5082d6d5-6145-d7f3-0583-9b9704a0a7f7.png" alt=""
+                    data-image-width="922" data-image-height="337" />
+                  <!--<h3 class="u-text u-text-default u-text-1">即刻加入智能撲滿<br>-->
+                  <!--<br>無上限試算最適合你的投資組合-->
+                  <!--</h3>-->
                 </div>
               </div>
-              <!-- <div class="u-layout-row animate__animated animate__fadeInUp">
+            </div>
+            <!-- <div class="u-layout-row animate__animated animate__fadeInUp">
                 <div
                   class="u-container-style u-image u-layout-cell u-size-30 u-image-1 reflection"
                   data-image-width="1284"
@@ -323,66 +317,62 @@
                   <div class="u-container-layout u-container-layout-1"></div>
                 </div>
               </div> -->
-            </div>
           </div>
         </div>
+      </div>
     </section>
     <section class="u-clearfix u-palette-3-light-3 u-section-2" id="sec-f06c">
-        <div class="u-clearfix u-sheet u-sheet-1">
-          <div class="u-clearfix u-gutter-0 u-layout-wrap u-layout-wrap-1">
-            <div class="u-layout">
-              <div class="u-layout-row">
-                <div
-                  class="u-align-center u-container-style u-layout-cell u-left-cell u-size-30 u-layout-cell-1"
-                >
-                  <div class="u-container-layout u-container-layout-1">
-                    <div id="ChartsDiv">
-                      <figure class="highcharts-figure">
-                        <article id="results"></article>
-                      </figure>
-                    </div>
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <div class="u-clearfix u-gutter-0 u-layout-wrap u-layout-wrap-1">
+          <div class="u-layout">
+            <div class="u-layout-row">
+              <div class="u-align-center u-container-style u-layout-cell u-left-cell u-size-30 u-layout-cell-1">
+                <div class="u-container-layout u-container-layout-1">
+                  <div id="ChartsDiv">
+                    <figure class="highcharts-figure">
+                      <article id="results"></article>
+                    </figure>
                   </div>
                 </div>
-                <div
-                  class="u-align-left u-container-style u-layout-cell u-right-cell u-size-30 u-layout-cell-2"
-                >
-                  <div class="u-container-layout u-container-layout-2">
-                    <h3 class="u-text u-text-1">
-                      客製化的投資組合<br />
-                      <br />更貼合你的風險評價<br />
-                      <br />一同攜手打造財富自由
-                    </h3>
-                  </div>
+              </div>
+              <div class="u-align-left u-container-style u-layout-cell u-right-cell u-size-30 u-layout-cell-2">
+                <div class="u-container-layout u-container-layout-2">
+                  <h3 class="u-text u-text-1">
+                    客製化的投資組合<br />
+                    <br />更貼合你的風險評價<br />
+                    <br />一同攜手打造財富自由
+                  </h3>
                 </div>
               </div>
             </div>
           </div>
         </div>
+      </div>
     </section>
-</main>
+  </main>
 
-<footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-3e64">
+  <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-3e64">
     <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
-        <p class="u-small-text u-text u-text-variant u-text-1" ,style="fontfamily: 'STKaiti'">台北商業大學 資訊管理系 11404組</p>
+      <p class="u-small-text u-text u-text-variant u-text-1" ,style="fontfamily: 'STKaiti'">台北商業大學 資訊管理系 11404組</p>
     </div>
-</footer>
-<!--<section class="u-backlink u-clearfix u-grey-80">-->
-<!--    <a class="u-link" href="https://nicepage.com/website-templates" target="_blank">-->
-<!--        <span>Website Templates</span>-->
-<!--    </a>-->
-<!--    <p class="u-text">-->
-<!--        <span>created with</span>-->
-<!--    </p>-->
-<!--    <a class="u-link" href="" target="_blank">-->
-<!--        <span>Website Builder Software</span>-->
-<!--    </a>.-->
-<!--</section>-->
+  </footer>
+  <!--<section class="u-backlink u-clearfix u-grey-80">-->
+  <!--    <a class="u-link" href="https://nicepage.com/website-templates" target="_blank">-->
+  <!--        <span>Website Templates</span>-->
+  <!--    </a>-->
+  <!--    <p class="u-text">-->
+  <!--        <span>created with</span>-->
+  <!--    </p>-->
+  <!--    <a class="u-link" href="" target="_blank">-->
+  <!--        <span>Website Builder Software</span>-->
+  <!--    </a>.-->
+  <!--</section>-->
 
-<script>
+  <script>
     Highcharts.chart('results', {
       chart: {
         scrollablePlotArea: {
-          minWidth: 700
+          minWidth: 400
         },
         backgroundColor: '#fef9e6'
       },
@@ -450,62 +440,65 @@
       series: [{
         name: 'Provided Portfolio',
         data: [
-            {% for i in port01 %}
-                {{i}},
-            {% endfor %}
+          {% for i in port01 %}
+                {{ i }},
+      {% endfor %}
         ]
       }, {
         name: 'Comparison Portfolio',
         data: [
-            {% for i in port02 %}
-                {{i}},
-            {% endfor %}
+          {% for i in port02 %}
+                {{ i }},
+      {% endfor %}
         ]
       }]
     });
-</script>
-<script>
-    function scrollTrigger(selector, options = {}){
-        let els = document.querySelectorAll(selector)
-        els = Array.from(els)
-        els.forEach(el => {
-            addObserver(el, options)
-        })
+  </script>
+  <script>
+    function scrollTrigger(selector, options = {}) {
+      let els = document.querySelectorAll(selector)
+      els = Array.from(els)
+      els.forEach(el => {
+        addObserver(el, options)
+      })
     }
-    
-    function addObserver(el, options){
-        if(!('IntersectionObserver' in window)){
-            if(options.cb){
-                options.cb(el)
-            }else{
-                entry.target.classList.add('active')
-            }
-            return
+
+    function addObserver(el, options) {
+      if (!('IntersectionObserver' in window)) {
+        if (options.cb) {
+          options.cb(el)
+        } else {
+          entry.target.classList.add('active')
         }
-        let observer = new IntersectionObserver((entries, observer) => { //this takes a callback function which receives two arguments: the elemts list and the observer instance
-            entries.forEach(entry => {
-                if(entry.isIntersecting){
-                    if(options.cb){
-                        options.cb(el)
-                    }else{
-                        entry.target.classList.add('active')
-                    }
-                    observer.unobserve(entry.target)
-                }
-            })
-        }, options)
-        observer.observe(el)
+        return
+      }
+      let observer = new IntersectionObserver((entries, observer) => { //this takes a callback function which receives two arguments: the elemts list and the observer instance
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            if (options.cb) {
+              options.cb(el)
+            } else {
+              entry.target.classList.add('active')
+            }
+            observer.unobserve(entry.target)
+          }
+        })
+      }, options)
+      observer.observe(el)
     }
-    
-    scrollTrigger('.u-section-2', {cb: () => {
-      let row = document.querySelector(".u-section-2 .u-layout-row")
-      row.style.opacity = 1
-    
-      row.querySelector(".u-layout-cell-1").classList.add("animate__animated")
-      row.querySelector(".u-layout-cell-1").classList.add("animate__fadeInLeft")
-      row.querySelector(".u-layout-cell-2").classList.add("animate__animated")
-      row.querySelector(".u-layout-cell-2").classList.add("animate__fadeInUp")
-    }})
-</script>
+
+    scrollTrigger('.u-section-2', {
+      cb: () => {
+        let row = document.querySelector(".u-section-2 .u-layout-row")
+        row.style.opacity = 1
+
+        row.querySelector(".u-layout-cell-1").classList.add("animate__animated")
+        row.querySelector(".u-layout-cell-1").classList.add("animate__fadeInLeft")
+        row.querySelector(".u-layout-cell-2").classList.add("animate__animated")
+        row.querySelector(".u-layout-cell-2").classList.add("animate__fadeInRight")
+      }
+    })
+  </script>
 </body>
+
 </html>

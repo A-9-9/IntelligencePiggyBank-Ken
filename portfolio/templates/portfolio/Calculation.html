@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="keywords" content="登入">
     <meta name="description" content="">
-    <title>SingIn</title>
+    <title>試算</title>
     <link rel="stylesheet" href="/static/portfolio/nicepage.css" media="screen">
     <script class="u-script" type="text/javascript" src="/static/portfolio/jquery.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="/static/portfolio/nicepage.js" defer=""></script>
@@ -37,6 +37,16 @@
     <meta name="theme-color" content="#478ac9">
     <meta property="og:title" content="SingIn">
     <meta property="og:type" content="website">
+    <style>
+        .u-section-1 .u-group-1 {
+            min-height: 690px;
+            width: 600px;
+            height: auto;
+            margin: 35px auto 57px;
+        }
+    </style>
+    <link rel="icon" href="/static/portfolio/images/logo_money.png" type="image/x-icon" />
+
 
     <style>
         /* bubbles */
@@ -187,21 +197,6 @@
             align-items: center;
         }
 
-        button[type="submit"] {
-            display: block;
-            background-color: white;
-            border-color: transparent;
-            border-radius: 10px;
-            box-shadow: 0px 0px 3px black;
-            padding: 3px 30px;
-            margin: 20px 0;
-        }
-
-        button[type="submit"]:active {
-            color: white;
-            background-color: black;
-        }
-
         footer {
             position: absolute;
             width: 100vw;
@@ -225,7 +220,7 @@
 
         #id_model {
             font-size: 30px;
-            margin: 10vh 0;
+            margin: 5vh 0;
         }
 
         #id_model>div {
@@ -251,7 +246,6 @@
             display: none;
         }
 
-
         footer {
             bottom: -10em;
         }
@@ -259,17 +253,17 @@
 </head>
 
 <body class="u-body u-xl-mode" data-lang="en">
-    <header class="u-box-shadow u-clearfix u-header u-sticky u-sticky-4220 u-white u-header" id="sec-f997" data-animation-name=""
-        data-animation-duration="0" data-animation-delay="0" data-animation-direction="">
+    <header class="u-box-shadow u-clearfix u-header u-sticky u-sticky-4220 u-white u-header" id="sec-f997"
+        data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">
         <div class="u-clearfix u-sheet u-sheet-1">
             <a href="/portfolio/home" class="u-image u-logo u-image-1" data-image-width="1920" data-image-height="1080"
-            title="Home">
+                title="Home">
                 <img src="/static/portfolio/images/logo_pig.png" class="u-logo-image u-logo-image-1">
             </a>
             <nav class="u-menu u-menu-one-level u-offcanvas u-menu-1">
                 <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px;">
                     <a class="u-button-style u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
-                    href="#">
+                        href="#">
                         <svg class="u-svg-link" viewBox="0 0 24 24">
                             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use>
                         </svg>
@@ -294,7 +288,8 @@
                                 href="/portfolio/questionnaire" style="padding: 26px 20px;">問卷試算</a>
                             <div class="u-nav-popup">
                                 <ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10">
-                                    <li class="u-nav-item"><a class="u-button-style u-nav-link u-white" href="#">SingIn</a>
+                                    <li class="u-nav-item"><a class="u-button-style u-nav-link u-white"
+                                            href="#">SingIn</a>
                                     </li>
                                 </ul>
                             </div>
@@ -322,12 +317,18 @@
                         <div class="u-inner-container-layout u-sidenav-overflow">
                             <div class="u-menu-close"></div>
                             <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-3">
-                                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="/portfolio/about">關於我們</a></li>
-                                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="/portfolio/questionnaire">問卷試算</a></li>
-                                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="/portfolio/calculation">試算</a></li>
-                                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="/portfolio/signUp">註冊</a></li>
-                                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="/portfolio/signIn">登入</a></li>
-                                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="/portfolio/signOut">登出</a></li>
+                                <li class="u-nav-item"><a class="u-button-style u-nav-link"
+                                        href="/portfolio/about">關於我們</a></li>
+                                <li class="u-nav-item"><a class="u-button-style u-nav-link"
+                                        href="/portfolio/questionnaire">問卷試算</a></li>
+                                <li class="u-nav-item"><a class="u-button-style u-nav-link"
+                                        href="/portfolio/calculation">試算</a></li>
+                                <li class="u-nav-item"><a class="u-button-style u-nav-link"
+                                        href="/portfolio/signUp">註冊</a></li>
+                                <li class="u-nav-item"><a class="u-button-style u-nav-link"
+                                        href="/portfolio/signIn">登入</a></li>
+                                <li class="u-nav-item"><a class="u-button-style u-nav-link"
+                                        href="/portfolio/signOut">登出</a></li>
                             </ul>
                         </div>
                     </div>
@@ -377,30 +378,7 @@
                                         <div id="content-wrapper">
                                             <div class="btn-content">
                                                 <h3>Mean Variance Model</h3>
-                                                \begin{equation*} \mathop{\ Max}\;
-                                                \sum_{i=1}^{n}r_{i}(w^{+}_{i}-w^{-}_{i}),
-                                                \end{equation*}
-                                                \begin{equation*} \mathop{\ Min}\;
-                                                \sum_{i=1}^{n}(w^{+}_{i}-w^{-}_{i})^{2}\sigma^{2}_{i}\;+\;\sum_{i=1}^{n}\sum_{j=1(j\neq
-                                                i)}^{n}\;\sigma_{ij}(w^{+}_{i}-w^{-}_{i})(w^{+}_{j}-w^{-}_{j}),
-                                                \end{equation*}
-                                                \begin{equation*} \mathop{\ Min}\;\sum_{i=1}^{n}w_{i}^{-},
-                                                \end{equation*}
-                                                \begin{equation*} \mathop{\ Min}\;\sum_{i=1}^{n}( p_{1}l^{+}_{i} +
-                                                p_{2}l^{−}_{i} + p_{3}s^{+}_{i} + p_{4}s^{−}_{i} ), \end{equation*}
-                                                \begin{equation*} \textbf{s.t.}\;\sum_{i=1}^{n}(w^{+}_{i} + kw^{−}_{i} +
-                                                p_{1}l^{+}_{i} + p_{2}l^{−}_{i} + p_{3}s^{+}_{i} + p_{4}s^{−}_{i} ) = 1,
-                                                \end{equation*}
-                                                \begin{equation*} w^{+}_{i} = w^{+}_{i,0} + l^{+}_{i} − l^{−}_{i} ,
-                                                \end{equation*}
-                                                \begin{equation*} w^{−}_{i} = w^{−}_{i,0} + s^{+}_{i} − s^{−}_{i} ,
-                                                \end{equation*}
-                                                \begin{equation*} 0.05u_{i}\leqslant w^{+}_{i} \leqslant 0.2u_{i},
-                                                \end{equation*}
-                                                \begin{equation*} 0.05v_{i} \leqslant w^{−} _{i} \leqslant 0.2v_{i},
-                                                \end{equation*}
-                                                \begin{equation*} u_{i} + v_{i} = y_{i}, \end{equation*}
-                                                \begin{equation*} i=1,2\;...,n. \end{equation*}
+                                                <img src="/static/portfolio/images/mv_formula.png" width="500">
                                                 <li>
                                                     目標式（1）為最大化投資組合報酬；限制式（2）最小化投資組合風險；限制式（3）為最小化賣空；限制式（4）最小化投資組合交易成本；限制式（5）為投資組合再調整中，投交易成本與資標的權重總和需等於1；限制式（6）與（7）為投資組合再調整後，投資標的權重的定義；限制式（8）與（9）為權重上下邊界，避免投資比例太低進而降低管理投資組合效率；限制式（10）為使用來強制第
                                                     j 個標的只能買入或買空。
@@ -408,44 +386,7 @@
                                             </div>
                                             <div class="btn-content" style="display:none;">
                                                 <h3>Conditional Value at Risk Model</h3>
-                                                \begin{equation*} \mathop{\ Min}\; \theta\;
-                                                +\sum_{j=1}^{n}\mathrm{w}_{j}^{-} +
-                                                \sum_{j=1}^{n}(p_{1}l_{j}^{+}+p_{2}l_{j}^{-}+p_{3}s_{j}^{+}+p_{4}s_{j}^{-})
-                                                \end{equation*}
-                                                \begin{equation*} \textbf{s.t.}\;\xi\;+\;\frac{1}{1-\alpha
-                                                }\frac{1}{T^{i}}\sum_{t=1}^{T}\eta^{i}_{t}\;\leqslant\;\theta,\;i=1,
-                                                2,\; . . .,
-                                                l, \end{equation*}
-                                                \begin{equation*} η^{i}_{t} \geqslant -\left(
-                                                \sum_{j=1}^{n}{r}^{i}_{jt}(w^{+}_{j} − w^{−}_{j} ) \right)-\xi,\; t = 1,
-                                                2,\; .
-                                                . ., T^{i}, i = 1, 2,\; . . ., l, \end{equation*}
-                                                \begin{equation*} η^{i}_{t} \geqslant 0,t = 1, 2,\; . . ., T^{i}, i = 1,
-                                                2,\; .
-                                                . ., l, \end{equation*}
-                                                \begin{equation*} \sum_{j=1}^{n}\overline{r}^{i}_{j}(w^{+}_{j} −
-                                                w^{−}_{j} )
-                                                \geqslant E,\; i = 1, 2, \; . . ., l, \end{equation*}
-                                                \begin{equation*} \sum_{j=1}^{n}(w^{+}_{j} + kw^{−}_{j} + p_{1}l^{+}_{j}
-                                                +
-                                                p_{2}l^{−}_{j} + p_{3}s^{+}_{j} + p_{4}s^{−}_{j} ) = 1, \end{equation*}
-                                                \begin{equation*} w^{+}_{j} = w^{+}_{j,0} + l^{+}_{j} − l^{−}_{j} , j =
-                                                1, 2,\;
-                                                . . ., n, \end{equation*}
-                                                \begin{equation*} w^{−}_{j} = w^{−}_{j,0} + s^{+}_{j} − s^{−}_{j} , j =
-                                                1, 2,\;
-                                                . . ., n, \end{equation*}
-                                                \begin{equation*} 0.01u_{j} \leqslant w^{+}_{j} \leqslant u_{j}, \;j =
-                                                1, 2,\; .
-                                                . ., n, \end{equation*}
-                                                \begin{equation*} 0.01v_{j} \leqslant w^{−} _{j} \leqslant v_{j}, \;j =
-                                                1, 2,
-                                                \;. . ., n, \end{equation*}
-                                                \begin{equation*} u_{j} + v_{j} \leqslant 1,\;j = 1, 2, \;. . ., n,
-                                                \end{equation*}
-                                                \begin{equation*} u_{j},v_{j} ∈ {\left\{ 0,1 \right\}}, j = 1, 2,\; . .
-                                                ., n,
-                                                \end{equation*}
+                                                <img src="/static/portfolio/images/cvar_formula.png" width="500">
                                                 <li>
                                                     目標式（1）為最小化條件風險值、最小化投資組合賣空權重與最小化投資組合交易成本；限制式（2）為衡量最差情況下的條件風險值；限制式（3）為衡量投資組合在所有可能的情況下，大於門檻值的風險；限制式（4）為大於門檻值的風險需大於0；限制式（5）為投資組合期望報酬率大於需求報酬率；限制式（6）為投資組合再調整中，投交易成本與資標的權重總和需等於1；限制式（7）與（8）為投資組合再調整後，投資標的權重的定義；限制式（9）與（10）為權重上下邊界，避免投資比例太低進而降低管理投資組合效率；限制式（11）為強制第
                                                     j
@@ -454,46 +395,7 @@
                                             </div>
                                             <div class="btn-content" style="display:none;">
                                                 <h3>Omega ratio Model</h3>
-                                                \begin{equation*} \mathop{\
-                                                Max}\;\psi\;-\sum_{j=1}^{n}w^{-}_{j}-\sum_{j=1}^{n}(
-                                                p_{1}l^{+}_{j} + p_{2}l^{−}_{j} + p_{3}s^{+}_{j} + p_{4}s^{−}_{j} )
-                                                \end{equation*}
-                                                \begin{equation*} \textbf{s.t.} \;δ\left( \sum_{j=1}^{n} (w^{+}_{j} −
-                                                w^{−}_{j}
-                                                ) \overline{r}^{i}_{j} -τ\right)-(1 −
-                                                δ)\frac{1}{T^{i}}\sum_{t=1}^{T^{i}}η^{i}_{t}\geqslant ψ, \end{equation*}
-                                                \begin{equation*} η^{i}_{t} \geqslant -
-                                                \sum_{j=1}^{n}{\overline{r}}^{i}_{j}(w^{+}_{j} − w^{−}_{j} )+\tau,
-                                                \end{equation*}
-                                                \begin{equation*} η^{i}_{t} \geqslant 0,t = 1, 2,\; . . ., T^{i}, i = 1,
-                                                2,\; .
-                                                . ., l, \end{equation*}
-                                                \begin{equation*} \sum_{j=1}^{n}\overline{r}^{i}_{j}(w^{+}_{j} −
-                                                w^{−}_{j} )
-                                                \geqslant E,\; i = 1, 2, \; . . ., l, \end{equation*}
-                                                \begin{equation*} \sum_{j=1}^{n}(w^{+}_{j} + kw^{−}_{j} + p_{1}l^{+}_{j}
-                                                +
-                                                p_{2}l^{−}_{j} + p_{3}s^{+}_{j} + p_{4}s^{−}_{j} ) = 1, \end{equation*}
-                                                \begin{equation*} w^{+}_{j} = w^{+}_{j,0} + l^{+}_{j} − l^{−}_{j} , j =
-                                                1, 2,\;
-                                                . . ., n, \end{equation*}
-                                                \begin{equation*} w^{−}_{j} = w^{−}_{j,0} + s^{+}_{j} − s^{−}_{j} , j =
-                                                1, 2,\;
-                                                . . ., n, \end{equation*}
-                                                \begin{equation*} 0.01u_{j} \leqslant w^{+}_{j} \leqslant u_{j}, \;j =
-                                                1, 2,\; .
-                                                . ., n, \end{equation*}
-                                                \begin{equation*} 0.01v_{j} \leqslant w^{−} _{j} \leqslant v_{j}, \;j =
-                                                1, 2,
-                                                \;. . ., n, \end{equation*}
-                                                \begin{equation*} u_{j} + v_{j} \leqslant 1,\;j = 1, 2, \;. . ., n,
-                                                \end{equation*}
-                                                \begin{equation*} u_{j},v_{j} ∈ {\left\{ 0,1 \right\}}, j = 1, 2,\; . .
-                                                ., n,
-                                                \end{equation*}
-                                                \begin{equation*} t=1,2\;...,T^i, \end{equation*}
-                                                \begin{equation*} i=1,2\;...,l, \end{equation*}
-                                                \begin{equation*} j=1,2\;...,n. \end{equation*}
+                                                <img src="/static/portfolio/images/omega_formula.png" width="500">
                                                 <li>
                                                     目標式（1）為最大化報酬與風險之比率、最小化投資組合賣空權重與最小化投資組合交易成本；限制式（2）在第一部分，投資組合報酬大於門檻值，故劃分為獲利；小於門檻值則劃分為損失。若為1，最大化投資組合收益為主要問題；若為0則代表最小化投資組合風險；限制式（3）為可能性分佈下，大於門檻之投資組合的風險；限制式（4）為大於門檻值的風險需大於0；限制式（5）為投資組合期望報酬率大於需求報酬率；限制式（6）為投資組合再調整中，投交易成本與資標的權重總和需等於1；限制式（7）與（8）為投資組合再調整後，投資標的權重的定義；限制式（9）與（10）為權重上下邊界，避免投資比例太低進而降低管理投資組合效率；限制式（11）為強制第
                                                     j
@@ -513,9 +415,10 @@
                                     </td>
                                 </tr>
                                 </br>
-                                <div class="row justify-center">
-                                    <button type="submit">送出</button>
-                                </div>
+                                <input type="submit"
+                                    class="u-expanded-width u-border-none
+                                    u-btn u-btn-round u-btn-submit u-button-style u-hover-palette-4-dark-2 u-palette-4-dark-1 u-radius-21 u-btn-1"
+                                    value="送出" />
                             </form>
                             {{s}}
                         </div>
@@ -527,7 +430,7 @@
 
     <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-3e64">
         <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
-            <p class="u-small-text u-text u-text-variant u-text-1">台北商業大學 資訊管理系 11404組 所擁有</p>
+            <p class="u-small-text u-text u-text-variant u-text-1">台北商業大學 資訊管理系 11404組</p>
         </div>
     </footer>
     <!--<section class="u-backlink u-clearfix u-grey-80">-->

@@ -262,11 +262,11 @@ def questionnaire(request):
 
 # 首頁
 def home(request):
-    li = [0 for x in range(40)]
+    li = [0 for x in range(50)]
     for i in range(1, len(li)):
         li[i] = li[i - 1] + random.random() * 15 - 5
     port01 = li
-    li = [0 for x in range(40)]
+    li = [0 for x in range(50)]
     for i in range(1, len(li)):
         li[i] = li[i - 1] + random.random() * 15 - 5
     port02 = li
@@ -347,13 +347,13 @@ def calculation(request):
         '''
 
         if model == 1:
-            model_name, top_10_weight_and_name, periods, amount_response, roi, pie_chart_order_by_industry, port_list\
+            model_name, top_10_weight_and_name, periods, amount_response, roi, pie_chart_order_by_industry, port_list, roi_periodically\
                 = models_MV(amount)
         elif model == 2:
-            model_name, top_10_weight_and_name, periods, amount_response, roi, pie_chart_order_by_industry, port_list\
+            model_name, top_10_weight_and_name, periods, amount_response, roi, pie_chart_order_by_industry, port_list, roi_periodically\
                 = models_CVaR(amount)
         else:
-            model_name, top_10_weight_and_name, periods, amount_response, roi, pie_chart_order_by_industry, port_list\
+            model_name, top_10_weight_and_name, periods, amount_response, roi, pie_chart_order_by_industry, port_list, roi_periodically\
                 = models_Omega(amount)
     else:
         form = CalculationForm()
@@ -384,8 +384,13 @@ def models_MV(amount):
 
     # return of investment line chart, base on the current date compare with the first day
     roi = {0: 0.0}
+    roi_periodically = {0: 0.0}
     for i in range(1, period):
         roi[i] = ((amount_mv[i] - amount_mv[0]) / amount_mv[0])*100
+        roi_periodically[i] = ((amount_mv[i] - amount_mv[i-1]) / amount_mv[i-1])*100
+
+
+
     # annual return column chart
     amount_response = ["{:.2f}".format(v) for k, v in amount_mv.items()]
 
@@ -428,7 +433,7 @@ def models_MV(amount):
     top_10_weight_and_name = [(x[0], x[1]) for x in top_10]
     top_10_weight_and_name.append(('Others', 1-total_top_10_weight))
     model_name = "Mean-Variance model consists of transaction cost and short selling."
-    return model_name, top_10_weight_and_name, periods, amount_response, roi, pie_chart_order_by_industry, port_list
+    return model_name, top_10_weight_and_name, periods, amount_response, roi, pie_chart_order_by_industry, port_list, roi_periodically
 
 
 def models_CVaR(amount):
@@ -454,8 +459,10 @@ def models_CVaR(amount):
 
     # return of investment line chart
     roi = {0: 0.0}
+    roi_periodically = {0: 0.0}
     for i in range(1, period):
         roi[i] = (amount_CVaR[i] - amount_CVaR[0]) / amount_CVaR[0]*100
+        roi_periodically[i] = ((amount_CVaR[i] - amount_CVaR[i-1]) / amount_CVaR[i-1])*100
 
     # annual return column chart
     amount_response = ["{:.2f}".format(v) for k, v in amount_CVaR.items()]
@@ -499,7 +506,7 @@ def models_CVaR(amount):
     top_10_weight_and_name = [(x[0], x[1]) for x in top_10]
     top_10_weight_and_name.append(('Others', 1 - total_top_10_weight))
     model_name = "Conditional Value-at-Risk model."
-    return model_name, top_10_weight_and_name, periods, amount_response, roi, pie_chart_order_by_industry, port_list
+    return model_name, top_10_weight_and_name, periods, amount_response, roi, pie_chart_order_by_industry, port_list, roi_periodically
 
 
 def models_Omega(amount):
@@ -525,8 +532,10 @@ def models_Omega(amount):
 
     # return of investment line chart
     roi = {0: 0.0}
+    roi_periodically = {0: 0.0}
     for i in range(1, period):
         roi[i] = (amount_Omega[i] - amount_Omega[0]) / amount_Omega[0]*100
+        roi_periodically[i] = ((amount_Omega[i] - amount_Omega[i-1]) / amount_Omega[i-1])*100
 
     # annual return column chart
     amount_response = ["{:.2f}".format(v) for k, v in amount_Omega.items()]
@@ -572,7 +581,7 @@ def models_Omega(amount):
     top_10_weight_and_name = [(x[0], x[1]) for x in top_10]
     top_10_weight_and_name.append(('Others', 1 - total_top_10_weight))
     model_name = "Omega model."
-    return model_name, top_10_weight_and_name, periods, amount_response, roi, pie_chart_order_by_industry, port_list
+    return model_name, top_10_weight_and_name, periods, amount_response, roi, pie_chart_order_by_industry, port_list, roi_periodically
 
 
 # @login_required
@@ -747,13 +756,13 @@ def portfolio_confirm(request):
         '''
 
         if model == 1:
-            model_name, top_10_weight_and_name, periods, amount_response, roi, pie_chart_order_by_industry, port_list\
+            model_name, top_10_weight_and_name, periods, amount_response, roi, pie_chart_order_by_industry, port_list, roi_periodically\
                 = models_MV(amount)
         elif model == 2:
-            model_name, top_10_weight_and_name, periods, amount_response, roi, pie_chart_order_by_industry, port_list\
+            model_name, top_10_weight_and_name, periods, amount_response, roi, pie_chart_order_by_industry, port_list, roi_periodically\
                 = models_CVaR(amount)
         else:
-            model_name, top_10_weight_and_name, periods, amount_response, roi, pie_chart_order_by_industry, port_list\
+            model_name, top_10_weight_and_name, periods, amount_response, roi, pie_chart_order_by_industry, port_list, roi_periodically\
                 = models_Omega(amount)
     else:
         form = CalculationForm()

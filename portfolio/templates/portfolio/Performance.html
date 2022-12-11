@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <title>績效分析</title>
     <link rel="stylesheet" href="/static/portfolio/nicepage.css" media="screen">
-    <link rel="stylesheet" href="/static/portfolio/About.css" media="screen">
+    <link rel="stylesheet" href="/static/portfolio/Performance.css" media="screen">
     <script class="u-script" type="text/javascript" src="/static/portfolio/jquery.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="/static/portfolio/nicepage.js" defer=""></script>
     <meta name="generator" content="Nicepage 4.21.12, nicepage.com">
@@ -18,11 +18,21 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="jquery-3.6.1.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    <script src="https://code.highcharts.com/stock/highstock.js"></script>
-    <script src="https://code.highcharts.com/stock/modules/drag-panes.js"></script>
-    <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
-    <script src="https://code.highcharts.com/stock/modules/accessibility.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://code.highcharts.com/css/stocktools/gui.css">
+    <link rel="stylesheet" type="text/css" href="https://code.highcharts.com/css/annotations/popup.css">
 
+
+    <script src="https://code.highcharts.com/stock/highstock.js"></script>
+    <script src="https://code.highcharts.com/stock/modules/data.js"></script>   
+    <script src="https://code.highcharts.com/stock/indicators/indicators-all.js"></script>
+    <script src="https://code.highcharts.com/stock/modules/drag-panes.js"></script>  
+    <script src="https://code.highcharts.com/modules/annotations-advanced.js"></script>
+    <script src="https://code.highcharts.com/modules/price-indicator.js"></script>
+    <script src="https://code.highcharts.com/modules/full-screen.js"></script>   
+    <script src="https://code.highcharts.com/modules/stock-tools.js"></script>  
+    <script src="https://code.highcharts.com/stock/modules/heikinashi.js"></script>
+    <script src="https://code.highcharts.com/stock/modules/hollowcandlestick.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
     <script type="application/ld+json">{
         "@context": "http://schema.org",
         "@type": "Organization",
@@ -214,6 +224,7 @@
     </div>
 </header>
 
+
 <section class="u-clearfix u-section-1" id="sec-c439">
     <div class="u-clearfix u-sheet u-sheet-1">
         <div class="u-expanded-width u-list u-list-1">
@@ -226,6 +237,7 @@
             </div>
 
             <script>
+
         var result = [
                 {% for x, y in top_10_weight_and_name %}
                     ['{{x}}', {{y}}],

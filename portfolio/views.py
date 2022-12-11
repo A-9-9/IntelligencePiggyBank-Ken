@@ -355,6 +355,11 @@ def calculation(request):
         else:
             model_name, top_10_weight_and_name, periods, amount_response, roi, pie_chart_order_by_industry, port_list, roi_periodically\
                 = models_Omega(amount)
+        periods_amounts_pairs = zip(periods, amount_response)
+        periods_roi_pairs = zip(periods, [x for x in roi_periodically.values()])
+        periods_roi_pairs2 = zip(periods, [x for x in roi.values()])
+        periods_roi_pairs3 = zip(periods, [x for x in roi_periodically.values()])
+        periods_roi_pairs4 = zip(periods, [x for x in roi.values()])
     else:
         form = CalculationForm()
         return render(request, "portfolio/Calculation.html", locals())
@@ -764,6 +769,11 @@ def portfolio_confirm(request):
         else:
             model_name, top_10_weight_and_name, periods, amount_response, roi, pie_chart_order_by_industry, port_list, roi_periodically\
                 = models_Omega(amount)
+        periods_amounts_pairs = zip(periods, amount_response)
+        periods_roi_pairs = zip(periods, [x for x in roi_periodically.values()])
+        periods_roi_pairs2 = zip(periods, [x for x in roi.values()])
+        periods_roi_pairs3 = zip(periods, [x for x in roi_periodically.values()])
+        periods_roi_pairs4 = zip(periods, [x for x in roi.values()])
     else:
         form = CalculationForm()
         return render(request, "portfolio/Calculation.html", locals())

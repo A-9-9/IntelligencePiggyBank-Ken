@@ -243,6 +243,22 @@ def questionnaire(request):
             risk_preference = '高'
             portfolio_model = 'Mean–Variance model consists of transaction cost and short selling'
         # return redirect(reverse('portfolio:portfolioConfirm', args=(model,)))
+
+        '''
+            取得依照用戶特徵而推薦之模型，並顯示在confirm頁面
+        '''
+        user_id = request.user.id
+        recommended_model_by_user_feature = get_recommended_model_by_user(user_id)
+        if recommended_model_by_user_feature:
+            if recommended_model_by_user_feature[0] == 1:
+                recommended_risk_preference = '高'
+                recommended_model_name = 'Mean–Variance model consists of transaction cost and short selling'
+            elif recommended_model_by_user_feature[0] == 2:
+                recommended_risk_preference = '低'
+                recommended_model_name = 'Conditional Value-at-Risk model'
+            else:
+                recommended_risk_preference = '中'
+                recommended_model_name = 'Omega model'
         return render(request, "portfolio/PortfolioConfirm.html", locals())
     else:
         # if request method isn't POST
@@ -796,23 +812,14 @@ def portfolio_confirm(request):
     return render(request, "portfolio/Performance.html", locals())
 
 
+def get_recommended_model_by_user(user_id):
+    with connection.cursor() as cursor:
+        cursor.execute("select model from portfolio_userdetail where user_id=%s;", [user_id])
+        row = cursor.fetchall()
+    return [x[0] for x in row]
+
 
 def fn_test(request):
-    username = 'user03'
-    '''
-    create user detail by create user
-    email = 'user03@mail.com'
-    password = 'user03'
-    user = User.objects.create_user(username, email, password)
-    '''
+    user_id = request.user.id
 
-    # create user detail when user is created
-    user = User.objects.get(username=username)
-    user_detail = UserDetail.objects.create(
-        # select user model with the relate data like: gender...
-        model=1,
-        user=user
-    )
-    user_detail.save()
-
-    return HttpResponse('User initial completed!')
+    return HttpResponse(get_recommended_model_by_user(user_id))

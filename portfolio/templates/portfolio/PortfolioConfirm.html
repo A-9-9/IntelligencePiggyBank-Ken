@@ -296,6 +296,12 @@
                                      data-image-width="15" data-image-height="15">
 
                                 建議模型：「{{portfolio_model}}」<br><br>
+
+                                {% if recommended_model_by_user_feature %}
+                                    依據系統分析，與您特徵相似之投資人，傾向於選擇
+                                    <b>{{recommended_risk_preference}}度風險</b><br>
+                                    建議模型：「{{recommended_model_name}}」<br><br>
+                                {% endif %}
                                 或者您可以選擇自己所偏好之投資組合模型進行投資：
                             </h3>
 

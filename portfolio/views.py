@@ -2,6 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.contrib.auth import views as auth_views, authenticate, login, logout
 from django.contrib.auth.models import User
+from .models import UserDetail
 from django.contrib.auth.decorators import login_required
 import pandas as pd
 import random
@@ -300,8 +301,23 @@ def signUp(request):
         email = request.POST['email']
         user = authenticate(username=username, password=password)
         try:
-            # 註冊成功，登入並導向home
+            # 取得user的feature
+            gender = request.POST['gender']
+            age = request.POST['age']
+            career = request.POST['career']
+            education = request.POST['education']
+            annual_income = request.POST['annualIncome']
+            address = request.POST['address']
+
+            '''
+                透過SVM將user feature變成推薦的model
+            '''
+            model = 1
+
+            # 註冊成功，儲存推薦的model之外，登入並重導向home
             user = User.objects.create_user(username, email, password)
+            user_detail = UserDetail.objects.create(model=model, user=user)
+            user_detail.save()
             login(request, user)
             return redirect(reverse('portfolio:home'))
         except Exception:
@@ -781,6 +797,22 @@ def portfolio_confirm(request):
 
 
 
-
 def fn_test(request):
-    return HttpResponse(get_assets_name())
+    username = 'user03'
+    '''
+    create user detail by create user
+    email = 'user03@mail.com'
+    password = 'user03'
+    user = User.objects.create_user(username, email, password)
+    '''
+
+    # create user detail when user is created
+    user = User.objects.get(username=username)
+    user_detail = UserDetail.objects.create(
+        # select user model with the relate data like: gender...
+        model=1,
+        user=user
+    )
+    user_detail.save()
+
+    return HttpResponse('User initial completed!')

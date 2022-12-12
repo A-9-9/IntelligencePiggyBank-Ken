@@ -58,3 +58,7 @@ class AssetsDetail(models.Model):
 class Industry(models.Model):
     name = models.TextField()
 
+
+class UserDetail(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    model = models.IntegerField()

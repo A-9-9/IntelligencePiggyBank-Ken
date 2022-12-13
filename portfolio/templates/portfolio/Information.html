@@ -114,6 +114,10 @@
     </div>
 </header>
 
+<main>
+  <div class="bubbles col justify-center"></div>
+  <div class="bubbles col justify-center"></div>
+  <div class="bubbles col justify-center"></div>
 <section class="u-clearfix u-section-2" id="sec-ac15">
   <div class="u-clearfix u-sheet u-sheet-1">
     <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
@@ -147,50 +151,54 @@
   </div>
 </section>
 {% comment %} 
-<section class="u-clearfix u-section-1" id="sec-059d">
-    <div class="u-clearfix u-sheet u-sheet-1">
-        <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
-            <div class="u-layout">
-                <div class="u-layout-row">
-                    <!--                    <div class="u-container-style u-image u-layout-cell u-size-30 u-image-1" data-image-width="1284"-->
-                    <!--                         data-image-height="576">-->
-                    <!--                        <div class="u-container-layout u-container-layout-1"></div>-->
-                    <!--                    </div>-->
-                    <!--                    <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-2">-->
-                    <!--                        <div class="u-container-layout u-valign-middle-xs u-container-layout-2">-->
-                    <!--                            <img class="u-image u-image-default u-image-2"-->
-                    <!--                                 src="/static/portfolio/images/5082d6d5-6145-d7f3-0583-9b9704a0a7f7.png" alt=""-->
-                    <!--                                 data-image-width="922" data-image-height="337">-->
-                    <!--&lt;!&ndash;                            <h3 class="u-text u-text-default u-text-1">即刻加入智能撲滿<br>&ndash;&gt;-->
-                    <!--&lt;!&ndash;                                <br>無上限試算最適合你的投資組合&ndash;&gt;-->
-                    <!--&lt;!&ndash;                            </h3>&ndash;&gt;-->
-                    <!--                        </div>-->
-                    <!--                    </div>-->
-                    <div>
-                        <div>
-                            <H1>Company Information</H1>
-                        </div>
 
+  <section class="u-clearfix u-section-1" id="sec-059d">
+      <div class="u-clearfix u-sheet u-sheet-1">
+          <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
+              <div class="u-layout">
+                  <div class="u-layout-row">
+                      <!--                    <div class="u-container-style u-image u-layout-cell u-size-30 u-image-1" data-image-width="1284"-->
+                      <!--                         data-image-height="576">-->
+                      <!--                        <div class="u-container-layout u-container-layout-1"></div>-->
+                      <!--                    </div>-->
+                      <!--                    <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-2">-->
+                      <!--                        <div class="u-container-layout u-valign-middle-xs u-container-layout-2">-->
+                      <!--                            <img class="u-image u-image-default u-image-2"-->
+                      <!--                                 src="/static/portfolio/images/5082d6d5-6145-d7f3-0583-9b9704a0a7f7.png" alt=""-->
+                      <!--                                 data-image-width="922" data-image-height="337">-->
+                      <!--&lt;!&ndash;                            <h3 class="u-text u-text-default u-text-1">即刻加入智能撲滿<br>&ndash;&gt;-->
+                      <!--&lt;!&ndash;                                <br>無上限試算最適合你的投資組合&ndash;&gt;-->
+                      <!--&lt;!&ndash;                            </h3>&ndash;&gt;-->
+                      <!--                        </div>-->
+                      <!--                    </div>-->
+                      <div>
+                          <div>
+                              <H1>Company Information</H1>
+                          </div>
+  
+  
+                          <li>
+                              {{introduction}}
+                              {{error_message}}
+                          </li>
+  
+                          <H2>
+                              Contact Information
+                          </H2>
+                          <li>
+                              <a href="{{official_website}}" target="_blank">官方網站</a>
+                          </li>
+  
+  
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
 
-                        <li>
-                            {{introduction}}
-                            {{error_message}}
-                        </li>
-
-                        <H2>
-                            Contact Information
-                        </H2>
-                        <li>
-                            <a href="{{official_website}}" target="_blank">官方網站</a>
-                        </li>
-
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section> {% endcomment %}
+{% endcomment %}
+</main>
 <!--<section class="u-clearfix u-palette-3-light-3 u-section-2" id="sec-f06c">-->
 <!--    <div class="u-clearfix u-sheet u-sheet-1">-->
 <!--        <div class="u-clearfix u-gutter-0 u-layout-wrap u-layout-wrap-1">-->
@@ -321,6 +329,78 @@ Highcharts.chart('results', {
     });
 
 
+</script>
+
+
+<script>
+  class BubbleBuilder {
+      bubbleConfig = [
+          // pink
+          {
+              color: "rgb(250, 228, 223)",
+              size: "20px",
+              top: "20%",
+              left: "70%",
+              // animation: "floating-bubble-up-down 15s infinite linear",
+          },
+          // blue
+          {
+              color: "rgb(226, 234, 234)",
+              size: "100px",
+              top: "20%",
+              left: "40%",
+              // animation: "floating-bubble-down-up 15s infinite linear",
+          },
+          // purple
+          {
+              color: "rgb(239, 226, 236)",
+              size: "60px",
+              top: "20%",
+              left: "10%",
+              // animation: "floating-bubble-up-down 15s infinite linear",
+          },
+          // green
+          {
+              color: "rgb(227, 244, 224)",
+              size: "30px",
+              top: "20%",
+              left: "30%",
+              // animation: "floating-bubble-down-up 15s infinite linear",
+          },
+      ]
+
+      constructor() {
+
+      }
+
+      createBubbles(sectionNumber = 2) {
+          let sections = document.querySelectorAll(".bubbles")
+          sections.forEach((section, index) => {
+              section.style.left = `${(75 / (sectionNumber - 1)) * (index % sectionNumber)}%`
+              section.style.top = `${index * 20}%`
+              Array(4).fill(0).forEach((_, index) => {
+                  let { color, size, top, left, animation } = this.bubbleConfig[index]
+
+                  let node = document.createElement("div")
+                  node.classList = ["bubble"]
+                  node.style.background = color
+                  node.style.width = size
+                  node.style.height = size
+                  node.style.top = top
+                  node.style.left = left
+                  node.style.animation = Math.random() > 0.5 ? "floating-bubble-down-up 15s infinite linear" : "floating-bubble-up-down 15s infinite linear"
+
+                  section.appendChild(node)
+              })
+          })
+      }
+  }
+</script>
+
+<script>
+  // bubble init
+  let builder = new BubbleBuilder()
+  builder.createBubbles(3)
 </script>
 </body>
 </html>

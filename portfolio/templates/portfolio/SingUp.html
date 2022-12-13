@@ -180,115 +180,147 @@
                                         </div>
                                         {{error_message}}
 
-                                        <tr>
-                                            <th><label>您的性別是:</label></th>
-                                            <td>
-                                                <div id="id_question01">
-                                                    <div>
-                                                        <label for="id_question01_0"><input type="radio"
-                                                                                            name="gender" value="0"
-                                                                                            required
-                                                                                            id="id_question01_0">
-                                                            男
+                                        <div id="extra-question" class="row">
+                                            <div id="extra-question-section-1">
+                                                <div>
+                                                    <label>選擇您的性別</label>
+                                                    <div class="flex justify-around">
+                                                        <label for="id_question01_0">
+                                                            <input 
+                                                                type="radio"
+                                                                name="gender" 
+                                                                value="0"
+                                                                required
+                                                                id="id_question01_0" />
+                                                                男
                                                         </label>
-                                                    </div>
-                                                    <div>
-                                                        <label for="id_question01_1"><input type="radio"
-                                                                                            name="gender"
-                                                                                            value="1" required
-                                                                                            id="id_question01_1">
-                                                            女
+                                                        <label for="id_question01_1">
+                                                            <input 
+                                                                type="radio"
+                                                                name="gender"
+                                                                value="1" 
+                                                                required
+                                                                id="id_question01_1" />
+                                                                女
                                                         </label>
                                                     </div>
                                                 </div>
-                                            </td>
-                                        </tr>
+                                                <div>
+                                                    <label>選擇您的年齡層</label>
+                                                    <div class="select">
+                                                        <div class="select-wrapper">
+                                                            <select name="age">
+                                                                <option value="0">20~29</option>
+                                                                <option value="1">30~39</option>
+                                                                <option value="2">40~49</option>
+                                                                <option value="3">50~59</option>
+                                                                <option value="4">60~69</option>
+                                                                <option value="5">70~79</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <label>選擇您的教育程度</label>
+                                                    <div class="select">
+                                                        <div class="select-wrapper">
+                                                            <select name="education">
+                                                                <option value="0">國小</option>
+                                                                <option value="1">國中</option>
+                                                                <option value="2">高中</option>
+                                                                <option value="3">專科</option>
+                                                                <option value="4">學士</option>
+                                                                <option value="5">碩士</option>
+                                                                <option value="6">博士</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="bordered" id="question-middle">
 
-                                        <label>選擇您的年齡層</label>
-                                        <select name="age">
-                                            <option value="0">20~29</option>
-                                            <option value="1">30~39</option>
-                                            <option value="2">40~49</option>
-                                            <option value="3">50~59</option>
-                                            <option value="4">60~69</option>
-                                            <option value="5">70~79</option>
-                                        </select>
-
-                                        <label>選擇您的行業類別</label>
-                                        <select name="career">
-                                            <option value="0">農牧業</option>
-                                            <option value="1">漁業</option>
-                                            <option value="2">木材森林業</option>
-                                            <option value="3">礦業採石業</option>
-                                            <option value="4">交通運輸業</option>
-                                            <option value="5">餐旅業</option>
-                                            <option value="6">建築工程業</option>
-                                            <option value="7">製造業</option>
-                                            <option value="8">新聞廣告業</option>
-                                            <option value="9">衛生保健業</option>
-                                            <option value="10">娛樂業</option>
-                                            <option value="11">文教機關</option>
-                                            <option value="12">宗教團體</option>
-                                            <option value="13">公共事業</option>
-                                            <option value="14">一般商業</option>
-                                            <option value="15">服務業</option>
-                                            <option value="16">家庭管理</option>
-                                            <option value="17">治安人員</option>
-                                            <option value="18">軍人</option>
-                                            <option value="19">資訊業</option>
-                                            <option value="20">直接運動人員</option>
-                                            <option value="21">其他</option>
-                                        </select>
-
-                                        <label>選擇您的教育程度</label>
-                                        <select name="education">
-                                            <option value="0">國小</option>
-                                            <option value="1">國中</option>
-                                            <option value="2">高中</option>
-                                            <option value="3">專科</option>
-                                            <option value="4">學士</option>
-                                            <option value="5">碩士</option>
-                                            <option value="6">博士</option>
-                                        </select>
-
-                                        <label>選擇您的年收入</label>
-                                        <select name="annualIncome">
-                                            <option value="0">低於250000</option>
-                                            <option value="1">250000~349999</option>
-                                            <option value="2">350000~449999</option>
-                                            <option value="3">450000~549999</option>
-                                            <option value="4">550000~649999</option>
-                                            <option value="5">650000~749999</option>
-                                            <option value="6">750000~849999</option>
-                                            <option value="7">850000~949999</option>
-                                            <option value="8">950000~1049999</option>
-                                            <option value="9">高於1050000</option>
-                                        </select>
-
-
-                                        <label>選擇您所居住的縣市</label>
-                                        <select name="address">
-                                            <option value="0">南投縣</option>
-                                            <option value="1">嘉義縣</option>
-                                            <option value="2">基隆市</option>
-                                            <option value="3">宜蘭縣</option>
-                                            <option value="4">屏東縣</option>
-                                            <option value="5">彰化縣</option>
-                                            <option value="6">新北市</option>
-                                            <option value="7">新竹市</option>
-                                            <option value="8">新竹縣</option>
-                                            <option value="9">桃園市</option>
-                                            <option value="10">澎湖縣</option>
-                                            <option value="11">台中市</option>
-                                            <option value="12">台北市</option>
-                                            <option value="13">台南市</option>
-                                            <option value="14">台東縣</option>
-                                            <option value="15">花蓮縣</option>
-                                            <option value="16">苗栗縣</option>
-                                            <option value="17">雲林縣</option>
-                                            <option value="18">高雄市</option>
-
-                                        </select>
+                                            </div>
+                                            <div>
+                                                <div>
+                                                    <label>選擇您的行業類別</label>
+                                                    <div class="select">
+                                                        <div class="select-wrapper">
+                                                            <select name="career">
+                                                                <option value="0">農牧業</option>
+                                                                <option value="1">漁業</option>
+                                                                <option value="2">木材森林業</option>
+                                                                <option value="3">礦業採石業</option>
+                                                                <option value="4">交通運輸業</option>
+                                                                <option value="5">餐旅業</option>
+                                                                <option value="6">建築工程業</option>
+                                                                <option value="7">製造業</option>
+                                                                <option value="8">新聞廣告業</option>
+                                                                <option value="9">衛生保健業</option>
+                                                                <option value="10">娛樂業</option>
+                                                                <option value="11">文教機關</option>
+                                                                <option value="12">宗教團體</option>
+                                                                <option value="13">公共事業</option>
+                                                                <option value="14">一般商業</option>
+                                                                <option value="15">服務業</option>
+                                                                <option value="16">家庭管理</option>
+                                                                <option value="17">治安人員</option>
+                                                                <option value="18">軍人</option>
+                                                                <option value="19">資訊業</option>
+                                                                <option value="20">直接運動人員</option>
+                                                                <option value="21">其他</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <label>選擇您的年收入</label>
+                                                    <div class="select">
+                                                        <div class="select-wrapper">
+                                                            <select name="annualIncome">
+                                                                <option value="0">低於250000</option>
+                                                                <option value="1">250000~349999</option>
+                                                                <option value="2">350000~449999</option>
+                                                                <option value="3">450000~549999</option>
+                                                                <option value="4">550000~649999</option>
+                                                                <option value="5">650000~749999</option>
+                                                                <option value="6">750000~849999</option>
+                                                                <option value="7">850000~949999</option>
+                                                                <option value="8">950000~1049999</option>
+                                                                <option value="9">高於1050000</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <label>選擇您所居住的縣市</label>
+                                                    <div class="select">
+                                                        <div class="select-wrapper">
+                                                            <select name="address">
+                                                                <option value="0">南投縣</option>
+                                                                <option value="1">嘉義縣</option>
+                                                                <option value="2">基隆市</option>
+                                                                <option value="3">宜蘭縣</option>
+                                                                <option value="4">屏東縣</option>
+                                                                <option value="5">彰化縣</option>
+                                                                <option value="6">新北市</option>
+                                                                <option value="7">新竹市</option>
+                                                                <option value="8">新竹縣</option>
+                                                                <option value="9">桃園市</option>
+                                                                <option value="10">澎湖縣</option>
+                                                                <option value="11">台中市</option>
+                                                                <option value="12">台北市</option>
+                                                                <option value="13">台南市</option>
+                                                                <option value="14">台東縣</option>
+                                                                <option value="15">花蓮縣</option>
+                                                                <option value="16">苗栗縣</option>
+                                                                <option value="17">雲林縣</option>
+                                                                <option value="18">高雄市</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
 
                                         <input type="submit"
                                                class="u-expanded-width u-border-none

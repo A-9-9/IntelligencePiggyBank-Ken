@@ -60,6 +60,10 @@
   margin: 5vh 10vw 5vh 10vw;
 }
 
+.flex {
+  display: flex;
+}
+
 .row {
   display: flex;
   flex-direction: row;
@@ -267,9 +271,130 @@ input {
   border-radius: 7px;
 }
 
+input[type=radio] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+
+  border: 2px solid #999;
+  transition: 0.2s all linear;
+  outline: none;
+  margin-right: 5px;
+
+  position: relative;
+  top: 4px;
+}
+
+input[type=radio]:checked {
+  border: 6px solid black;
+}
+
+select {
+  appearance: none;
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+  margin-left: 5px;
+  text-align: center;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: inherit;
+  line-height: inherit;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+.select {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-width: 15ch;
+  max-width: 30ch;
+  border: 2px solid gray;
+  border-radius: 0.5em;
+  padding-right: 0.5em;
+  font-size: 1.25rem;
+  cursor: pointer;
+  line-height: 1.1;
+}
+
+.select-wrapper {
+  width: 90%;
+}
+
+.select-wrapper::after {
+  content: "";
+  border-right: 2px solid gray;
+  border-radius: 5px;
+  position: relative;
+  right: 10px;
+  top: 1px;
+}
+
+.select::after {
+  content: "";
+  width: 0.8em;
+  height: 0.5em;
+  margin-left: 5px;
+  justify-self: end;
+  background-color: black;
+  clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+}
+
+
 .row:has(input) {
   margin: 5vh 0;
   font-size: 23px;
+}
+
+.row:has(input[type='radio']) {
+  font-size: 1.25rem;
+}
+
+#extra-question {
+  width: 100%;
+}
+
+#extra-question>div {
+  width: 45%;
+  margin: 0 2.5%;
+}
+
+#question-middle {
+  width: 1px !important;
+  margin: 0 2.5% 0 2.5% !important;
+  height: 25vh;
+}
+
+.bordered {
+  /* display: inline-block; */
+  /* padding: 20px; */
+  /* Fallback dashed border
+     - the 4px width here is overwritten with the border-image-width (if set)
+     - the border-image-width can be omitted below if it is the same as the 4px here
+  */
+  border-right: dashed 4px #000;
+
+  /* Individual border image properties */
+  border-image-source: url("http://i.stack.imgur.com/wLdVc.png");
+  border-image-slice: 2;
+  border-image-repeat: round;
+
+  /* or use the shorthand border-image */
+  border-image: url("http://i.stack.imgur.com/wLdVc.png") 2 round;
+}
+
+
+/*The border image of this one creates wider gaps*/
+.largeGaps {
+  border-image-source: url("http://i.stack.imgur.com/LKclP.png");
+  margin: 0 20px;
 }
 
 .yellow-diamond {

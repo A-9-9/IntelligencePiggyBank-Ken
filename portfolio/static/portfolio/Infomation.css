@@ -1,3 +1,7 @@
+main {
+    min-height: 65vh;
+}
+
 .u-section-2 .u-icon-1 {
     width: 64px;
     height: 64px;
@@ -13,3 +17,123 @@
     margin: 30px auto 0;
 }
 
+footer {
+    bottom: -5em;
+}
+
+
+/* bubbles */
+
+.bubbles {
+    position: fixed;
+    width: 30vw;
+    height: 100vh;
+}
+
+.bubble {
+    position: absolute;
+    border-radius: 50%;
+}
+
+/* animation */
+
+@keyframes floating-bubble-up-down {
+    from {
+        transform: translateY(0);
+    }
+
+    10% {
+        transform: translateY(50px);
+    }
+
+    20% {
+        transform: translateY(100px);
+    }
+
+    30% {
+        transform: translateY(150px);
+    }
+
+    40% {
+        transform: translateY(100px);
+    }
+
+    50% {
+        transform: translateY(50px);
+    }
+
+    60% {
+        transform: translateY(0px);
+    }
+
+    70% {
+        transform: translateY(-50px);
+    }
+
+    80% {
+        transform: translateY(-100px);
+    }
+
+    90% {
+        transform: translateY(-50px);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes floating-bubble-down-up {
+    from {
+        transform: translateY(0);
+    }
+
+    10% {
+        transform: translateY(-50px);
+    }
+
+    20% {
+        transform: translateY(-100px);
+    }
+
+    30% {
+        transform: translateY(-150px);
+    }
+
+    40% {
+        transform: translateY(-100px);
+    }
+
+    50% {
+        transform: translateY(-50px);
+    }
+
+    60% {
+        transform: translateY(0px);
+    }
+
+    70% {
+        transform: translateY(50px);
+    }
+
+    80% {
+        transform: translateY(100px);
+    }
+
+    90% {
+        transform: translateY(50px);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+}
+
+.justify-center {
+    justify-content: center;
+}

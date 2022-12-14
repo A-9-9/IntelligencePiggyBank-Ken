@@ -11,6 +11,11 @@ from django.contrib import messages
 from .form import LoginForm, CreateUserForm, PictureForm, CalculationForm
 from django.db import connection
 
+import pickle
+from sklearn.svm import SVC
+
+
+
 
 def user_login(request):
     if request.user.is_authenticated:
@@ -328,7 +333,10 @@ def signUp(request):
             '''
                 透過SVM將user feature變成推薦的model
             '''
-            model = 1
+            pickled_model = pickle.load(open('portfolio/model.pkl', 'rb'))
+            model = pickled_model.predict([[1, 1, 4, 1, 0, 18]])
+            model = model[0]
+
 
             # 註冊成功，儲存推薦的model之外，登入並重導向home
             user = User.objects.create_user(username, email, password)
@@ -337,6 +345,7 @@ def signUp(request):
             login(request, user)
             return redirect(reverse('portfolio:home'))
         except Exception:
+            print(Exception)
             error_message = '用戶名稱重複！'
             return render(request, "portfolio/SingUp.html", locals())
     return render(request, "portfolio/SingUp.html", locals())
@@ -820,6 +829,10 @@ def get_recommended_model_by_user(user_id):
 
 
 def fn_test(request):
-    user_id = request.user.id
+    import os
+    print(os.getcwd())
+    pickled_model = pickle.load(open('portfolio/model.pkl', 'rb'))
+    model = pickled_model.predict([[1, 1, 4, 1, 0, 18]])
+    model[0]
 
-    return HttpResponse(get_recommended_model_by_user(user_id))
+    return HttpResponse(model[0])

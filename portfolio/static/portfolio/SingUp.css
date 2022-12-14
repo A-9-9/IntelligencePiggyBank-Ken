@@ -333,7 +333,7 @@ select::-ms-expand {
   position: relative;
   right: -77%;
   /*   top: -px; */
-  height: 1.5em;
+  height: 1.7em;
 }
 
 .select::after {

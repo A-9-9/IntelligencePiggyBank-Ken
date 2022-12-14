@@ -178,7 +178,121 @@
       width: 320px;
     }
   }
-          
+        /* bubbles */
+
+.bubbles {
+  position: fixed;
+  width: 30%;
+  height: 100%;
+}
+
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+}
+
+/* animation */
+
+@keyframes floating-bubble-up-down {
+  from {
+    transform: translateY(0);
+  }
+
+  10% {
+    transform: translateY(50px);
+  }
+
+  20% {
+    transform: translateY(100px);
+  }
+
+  30% {
+    transform: translateY(150px);
+  }
+
+  40% {
+    transform: translateY(100px);
+  }
+
+  50% {
+    transform: translateY(50px);
+  }
+
+  60% {
+    transform: translateY(0px);
+  }
+
+  70% {
+    transform: translateY(-50px);
+  }
+
+  80% {
+    transform: translateY(-100px);
+  }
+
+  90% {
+    transform: translateY(-50px);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes floating-bubble-down-up {
+  from {
+    transform: translateY(0);
+  }
+
+  10% {
+    transform: translateY(-50px);
+  }
+
+  20% {
+    transform: translateY(-100px);
+  }
+
+  30% {
+    transform: translateY(-150px);
+  }
+
+  40% {
+    transform: translateY(-100px);
+  }
+
+  50% {
+    transform: translateY(-50px);
+  }
+
+  60% {
+    transform: translateY(0px);
+  }
+
+  70% {
+    transform: translateY(50px);
+  }
+
+  80% {
+    transform: translateY(100px);
+  }
+
+  90% {
+    transform: translateY(50px);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+}
+
+.justify-center {
+  justify-content: center;
+}  
 
     </style>
     <link rel="icon" href="/static/portfolio/images/logo_money.png" type="image/x-icon" />
@@ -329,6 +443,7 @@
 
                           <input type="radio" name="model" value="3" required id="id_model_2" onclick="hideLayer('btn1content'); hideLayer('btn2content'); showLayer('btn3content');" />
 
+
                           <label for="id_model_2"><span>穩健最大化報酬(Omega model)</span></label>
                         </div>
                       {% endif %}
@@ -365,18 +480,93 @@
     <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-3e64">
       <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
         <p class="u-small-text u-text u-text-variant u-text-1">台北商業大學 資訊管理系 11404組</p>
-      </div>
-    </footer>
-    <!-- <section class="u-backlink u-clearfix u-grey-80"> -->
-    <!-- <a class="u-link" href="https://nicepage.com/website-templates" target="_blank"> -->
-    <!-- <span>Website Templates</span> -->
-    <!-- </a> -->
-    <!-- <p class="u-text"> -->
-    <!-- <span>created with</span> -->
-    <!-- </p> -->
-    <!-- <a class="u-link" href="" target="_blank"> -->
-    <!-- <span>Website Builder Software</span> -->
-    <!-- </a>. -->
-    <!-- </section> -->
-  </body>
+
+    </div>
+</footer>
+<!--<section class="u-backlink u-clearfix u-grey-80">-->
+<!--    <a class="u-link" href="https://nicepage.com/website-templates" target="_blank">-->
+<!--        <span>Website Templates</span>-->
+<!--    </a>-->
+<!--    <p class="u-text">-->
+<!--        <span>created with</span>-->
+<!--    </p>-->
+<!--    <a class="u-link" href="" target="_blank">-->
+<!--        <span>Website Builder Software</span>-->
+<!--    </a>.-->
+<!--</section>-->
+
+</body>
+
+<script>
+  class BubbleBuilder {
+      bubbleConfig = [
+          // pink
+          {
+              color: "rgb(250, 228, 223)",
+              size: "20px",
+              top: "20%",
+              left: "70%",
+              // animation: "floating-bubble-up-down 15s infinite linear",
+          },
+          // blue
+          {
+              color: "rgb(226, 234, 234)",
+              size: "100px",
+              top: "20%",
+              left: "40%",
+              // animation: "floating-bubble-down-up 15s infinite linear",
+          },
+          // purple
+          {
+              color: "rgb(239, 226, 236)",
+              size: "60px",
+              top: "20%",
+              left: "10%",
+              // animation: "floating-bubble-up-down 15s infinite linear",
+          },
+          // green
+          {
+              color: "rgb(227, 244, 224)",
+              size: "30px",
+              top: "20%",
+              left: "30%",
+              // animation: "floating-bubble-down-up 15s infinite linear",
+          },
+      ]
+
+      constructor() {
+
+      }
+
+      createBubbles(sectionNumber = 2) {
+          let sections = document.querySelectorAll(".bubbles")
+          sections.forEach((section, index) => {
+              section.style.left = `${(75 / (sectionNumber - 1)) * (index % sectionNumber)}%`
+              section.style.top = `${index * 20}%`
+              section.style['z-index'] = 10
+              Array(4).fill(0).forEach((_, index) => {
+                  let { color, size, top, left, animation } = this.bubbleConfig[index]
+
+                  let node = document.createElement("div")
+                  node.classList = ["bubble"]
+                  node.style.background = color
+                  node.style.width = size
+                  node.style.height = size
+                  node.style.top = top
+                  node.style.left = left
+                  node.style.animation = Math.random() > 0.5 ? "floating-bubble-down-up 15s infinite linear" : "floating-bubble-up-down 15s infinite linear"
+
+                  section.appendChild(node)
+              })
+          })
+      }
+  }
+</script>
+
+<script>
+  // bubble init
+  let builder = new BubbleBuilder()
+  builder.createBubbles()
+</script>
+
 </html>

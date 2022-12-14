@@ -255,8 +255,8 @@ footer {
 .second a {
   padding: 20px;
   font-weight: bold;
-  border: 1px gray solid;
-  border-radius: 20px;
+  /* border: 1px gray solid;
+  border-radius: 20px; */
   margin: 20px 0 0 0;
   z-index: 1000;
 }

@@ -231,17 +231,17 @@ def questionnaire(request):
             # cvar
             model = 1
             risk_preference = '低'
-            portfolio_model = 'Conditional Value-at-Risk model'
+            portfolio_model = '穩健低風險(CVaR model)'
         elif sharpe_ratio < 0.7:
             # omega
             model = 2
             risk_preference = '中'
-            portfolio_model = 'Omega model'
+            portfolio_model = '穩健最大化報酬(Omega model)'
         else:
             # mv
             model = 3
             risk_preference = '高'
-            portfolio_model = 'Mean–Variance model consists of transaction cost and short selling'
+            portfolio_model = '高獲利(MV model)'
         # return redirect(reverse('portfolio:portfolioConfirm', args=(model,)))
 
         '''
@@ -252,13 +252,13 @@ def questionnaire(request):
         if recommended_model_by_user_feature:
             if recommended_model_by_user_feature[0] == 1:
                 recommended_risk_preference = '高'
-                recommended_model_name = 'Mean–Variance model consists of transaction cost and short selling'
+                recommended_model_name = '高獲利(MV model)'
             elif recommended_model_by_user_feature[0] == 2:
                 recommended_risk_preference = '低'
-                recommended_model_name = 'Conditional Value-at-Risk model'
+                recommended_model_name = '穩健低風險(CVaR model)'
             else:
                 recommended_risk_preference = '中'
-                recommended_model_name = 'Omega model'
+                recommended_model_name = '穩健最大化報酬(Omega model)'
         return render(request, "portfolio/PortfolioConfirm.html", locals())
     else:
         # if request method isn't POST
@@ -469,7 +469,7 @@ def models_MV(amount):
         total_top_10_weight += i[1]
     top_10_weight_and_name = [(x[0], x[1]) for x in top_10]
     top_10_weight_and_name.append(('Others', 1-total_top_10_weight))
-    model_name = "Mean-Variance model consists of transaction cost and short selling."
+    model_name = "高獲利(MV model)"
     return model_name, top_10_weight_and_name, periods, amount_response, roi, pie_chart_order_by_industry, port_list, roi_periodically
 
 
@@ -542,7 +542,7 @@ def models_CVaR(amount):
         total_top_10_weight += i[1]
     top_10_weight_and_name = [(x[0], x[1]) for x in top_10]
     top_10_weight_and_name.append(('Others', 1 - total_top_10_weight))
-    model_name = "Conditional Value-at-Risk model."
+    model_name = "穩健低風險(CVaR model)"
     return model_name, top_10_weight_and_name, periods, amount_response, roi, pie_chart_order_by_industry, port_list, roi_periodically
 
 
@@ -617,7 +617,7 @@ def models_Omega(amount):
         total_top_10_weight += i[1]
     top_10_weight_and_name = [(x[0], x[1]) for x in top_10]
     top_10_weight_and_name.append(('Others', 1 - total_top_10_weight))
-    model_name = "Omega model."
+    model_name = "穩健最大化報酬(Omega model)"
     return model_name, top_10_weight_and_name, periods, amount_response, roi, pie_chart_order_by_industry, port_list, roi_periodically
 
 

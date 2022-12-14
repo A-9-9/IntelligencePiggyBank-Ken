@@ -286,7 +286,7 @@ input[type=radio] {
   margin-right: 5px;
 
   position: relative;
-  top: 4px;
+  top: 1px;
 }
 
 input[type=radio]:checked {
@@ -297,13 +297,18 @@ select {
   appearance: none;
   border: none;
   border-radius: 5px;
-  width: 100%;
-  margin-left: 5px;
+  width: 1500%;
+  /*   margin-left: 5px; */
+  padding-right: 10%;
   text-align: center;
   font-family: inherit;
   font-size: inherit;
-  cursor: inherit;
+  cursor: pointer;
   line-height: inherit;
+  z-index: 5;
+  background: transparent;
+  border: 2px solid gray;
+  border-radius: 0.5em;
 }
 
 select::-ms-expand {
@@ -313,36 +318,32 @@ select::-ms-expand {
 .select {
   display: flex;
   align-items: center;
-  width: 100%;
+  width: 110%;
   min-width: 15ch;
   max-width: 30ch;
-  border: 2px solid gray;
-  border-radius: 0.5em;
-  padding-right: 0.5em;
+  /*   padding-right: 0.5em; */
   font-size: 1.25rem;
-  cursor: pointer;
-  line-height: 1.1;
+  line-height: 1.5;
 }
 
-.select-wrapper {
-  width: 90%;
-}
-
-.select-wrapper::after {
+.select::before {
   content: "";
   border-right: 2px solid gray;
   border-radius: 5px;
   position: relative;
-  right: 10px;
-  top: 1px;
+  right: -77%;
+  /*   top: -px; */
+  height: 1.5em;
 }
 
 .select::after {
   content: "";
-  width: 0.8em;
+  width: 10em;
   height: 0.5em;
   margin-left: 5px;
+  right: 13%;
   justify-self: end;
+  position: relative;
   background-color: black;
   clip-path: polygon(100% 0%, 0 0%, 50% 100%);
 }

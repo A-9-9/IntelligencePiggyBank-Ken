@@ -39,7 +39,7 @@
     <meta property="og:type" content="website">
     <style>
         .u-section-1 .u-group-1 {
-            min-height: 690px;
+            min-height: 500px;
             width: 600px;
             height: auto;
             margin: 35px auto 57px;
@@ -249,6 +249,12 @@
         footer {
             bottom: -10em;
         }
+
+        .u-image-1 {
+            width: 90px;
+            height:5%;
+
+        }
     </style>
 </head>
 
@@ -361,13 +367,13 @@
                                                 <i class="fa-solid fa-chevron-left"></i>
                                             </button>
                                             <div>
-                                                均異模型
+                                                高獲利(MV model)
                                             </div>
                                             <div>
-                                                條件風險值模型
+                                                穩健低風險(CVaR model)
                                             </div>
                                             <div>
-                                                Omega比率模型
+                                                穩健最大化報酬(Omega model)
                                             </div>
                                             <button class="carousel-btn center" type="button">
                                                 <i class="fa-solid fa-chevron-right"></i>
@@ -377,30 +383,33 @@
 
                                         <div id="content-wrapper">
                                             <div class="btn-content">
-                                                <h3>Mean Variance Model</h3>
+                                                <img src="/static/portfolio/images/money-tree.png" class="u-image-1" alt=" ">
+                                                {% comment %} <h3>Mean Variance Model</h3>
                                                 <img src="/static/portfolio/images/mv_formula.png" width="500">
                                                 <li>
                                                     目標式（1）為最大化投資組合報酬；限制式（2）最小化投資組合風險；限制式（3）為最小化賣空；限制式（4）最小化投資組合交易成本；限制式（5）為投資組合再調整中，投交易成本與資標的權重總和需等於1；限制式（6）與（7）為投資組合再調整後，投資標的權重的定義；限制式（8）與（9）為權重上下邊界，避免投資比例太低進而降低管理投資組合效率；限制式（10）為使用來強制第
                                                     j 個標的只能買入或買空。
-                                                </li>
+                                                </li> {% endcomment %}
                                             </div>
                                             <div class="btn-content" style="display:none;">
-                                                <h3>Conditional Value at Risk Model</h3>
+                                                <img src="/static/portfolio/images/profit.png" class="u-image-1" alt=" ">
+                                                {% comment %} <h3>Conditional Value at Risk Model</h3>
                                                 <img src="/static/portfolio/images/cvar_formula.png" width="500">
                                                 <li>
                                                     目標式（1）為最小化條件風險值、最小化投資組合賣空權重與最小化投資組合交易成本；限制式（2）為衡量最差情況下的條件風險值；限制式（3）為衡量投資組合在所有可能的情況下，大於門檻值的風險；限制式（4）為大於門檻值的風險需大於0；限制式（5）為投資組合期望報酬率大於需求報酬率；限制式（6）為投資組合再調整中，投交易成本與資標的權重總和需等於1；限制式（7）與（8）為投資組合再調整後，投資標的權重的定義；限制式（9）與（10）為權重上下邊界，避免投資比例太低進而降低管理投資組合效率；限制式（11）為強制第
                                                     j
                                                     個標的只能買入或買空；限制式（12）為二元變數，為1代表有投資買入第j個標的，若為0則代表沒有投資買入第j個標的；為1代表有投資賣空第j個標的，若為0則代表沒有投資賣空第j個標的。
-                                                </li>
+                                                </li> {% endcomment %}
                                             </div>
                                             <div class="btn-content" style="display:none;">
-                                                <h3>Omega ratio Model</h3>
+                                                <img src="/static/portfolio/images/profits.png" class="u-image-1" alt=" ">
+                                                {% comment %} <h3>Omega ratio Model</h3>
                                                 <img src="/static/portfolio/images/omega_formula.png" width="500">
                                                 <li>
                                                     目標式（1）為最大化報酬與風險之比率、最小化投資組合賣空權重與最小化投資組合交易成本；限制式（2）在第一部分，投資組合報酬大於門檻值，故劃分為獲利；小於門檻值則劃分為損失。若為1，最大化投資組合收益為主要問題；若為0則代表最小化投資組合風險；限制式（3）為可能性分佈下，大於門檻之投資組合的風險；限制式（4）為大於門檻值的風險需大於0；限制式（5）為投資組合期望報酬率大於需求報酬率；限制式（6）為投資組合再調整中，投交易成本與資標的權重總和需等於1；限制式（7）與（8）為投資組合再調整後，投資標的權重的定義；限制式（9）與（10）為權重上下邊界，避免投資比例太低進而降低管理投資組合效率；限制式（11）為強制第
                                                     j
                                                     個標的只能買入或買空；限制式（12）為二元變數，為1代表有投資買入第j個標的，若為0則代表沒有投資買入第j個標的；為1代表有投資賣空第j個標的，若為0則代表沒有投資賣空第j個標的。
-                                                </li>
+                                                </li> {% endcomment %}
                                             </div>
                                         </div>
                                     </td>

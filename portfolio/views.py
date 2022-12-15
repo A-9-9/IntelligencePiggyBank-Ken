@@ -829,10 +829,105 @@ def get_recommended_model_by_user(user_id):
 
 
 def fn_test(request):
-    import os
-    print(os.getcwd())
-    pickled_model = pickle.load(open('portfolio/model.pkl', 'rb'))
-    model = pickled_model.predict([[1, 1, 4, 1, 0, 18]])
-    model[0]
+    amount_response_mv, amount_response_cvar, amount_response_omega, periods = get_all_model_value()
+    return HttpResponse(amount_response_mv)
 
-    return HttpResponse(model[0])
+
+def get_all_model_value():
+    amount = 1_000_000
+
+    price = get_prices()
+    weight_mv = get_weight_MV()
+    amount_mv = {0: amount}
+    allocate_mv = {}
+    shares_mv = {}
+    period = len(weight_mv)
+    assets = len(weight_mv[0])
+    for i in range(period):
+        allocate_mv[i] = [0 for x in range(assets)]
+        shares_mv[i] = [0 for x in range(assets)]
+
+        if i != 0:
+            amount_mv[i] = sum(price[i][j] * shares_mv[i - 1][j] for j in range(assets))
+
+        for j in range(assets):
+            allocate_mv[i][j] = amount_mv[i] * weight_mv[i][j]
+            shares_mv[i][j] = allocate_mv[i][j] / price[i][j]
+
+    periods = [date.strftime("%Y/%m/%d") for date in get_period_date()]
+
+    # return of investment line chart, base on the current date compare with the first day
+    roi = {0: 0.0}
+    roi_periodically = {0: 0.0}
+    for i in range(1, period):
+        roi[i] = ((amount_mv[i] - amount_mv[0]) / amount_mv[0]) * 100
+        roi_periodically[i] = ((amount_mv[i] - amount_mv[i - 1]) / amount_mv[i - 1]) * 100
+
+    # annual return column chart
+    amount_response_mv = ["{:.2f}".format(v) for k, v in amount_mv.items()]
+
+
+    # model cvar
+    price = get_prices()
+    weight_CVaR = get_weight_CVaR()
+    amount_CVaR = {0: amount}
+    allocate_CVaR = {}
+    shares_CVaR = {}
+    period = len(weight_CVaR)
+    assets = len(weight_CVaR[0])
+    for i in range(period):
+        allocate_CVaR[i] = [0 for x in range(assets)]
+        shares_CVaR[i] = [0 for x in range(assets)]
+
+        if i != 0:
+            amount_CVaR[i] = sum(price[i][j] * shares_CVaR[i - 1][j] for j in range(assets))
+
+        for j in range(assets):
+            allocate_CVaR[i][j] = amount_CVaR[i] * weight_CVaR[i][j]
+            shares_CVaR[i][j] = allocate_CVaR[i][j] / price[i][j]
+
+    periods = [date.strftime("%Y/%m/%d") for date in get_period_date()]
+
+    # return of investment line chart
+    roi = {0: 0.0}
+    roi_periodically = {0: 0.0}
+    for i in range(1, period):
+        roi[i] = (amount_CVaR[i] - amount_CVaR[0]) / amount_CVaR[0] * 100
+        roi_periodically[i] = ((amount_CVaR[i] - amount_CVaR[i - 1]) / amount_CVaR[i - 1]) * 100
+
+    # annual return column chart
+    amount_response_cvar = ["{:.2f}".format(v) for k, v in amount_CVaR.items()]
+
+
+    # model omega
+    price = get_prices()
+    weight_Omega = get_weight_Omega()
+    amount_Omega = {0: amount}
+    allocate_Omega = {}
+    shares_Omega = {}
+    period = len(weight_Omega)
+    assets = len(weight_Omega[0])
+    for i in range(period):
+        allocate_Omega[i] = [0 for x in range(assets)]
+        shares_Omega[i] = [0 for x in range(assets)]
+
+        if i != 0:
+            amount_Omega[i] = sum(price[i][j] * shares_Omega[i - 1][j] for j in range(assets))
+
+        for j in range(assets):
+            allocate_Omega[i][j] = amount_Omega[i] * weight_Omega[i][j]
+            shares_Omega[i][j] = allocate_Omega[i][j] / price[i][j]
+
+    periods = [date.strftime("%Y/%m/%d") for date in get_period_date()]
+
+    # return of investment line chart
+    roi = {0: 0.0}
+    roi_periodically = {0: 0.0}
+    for i in range(1, period):
+        roi[i] = (amount_Omega[i] - amount_Omega[0]) / amount_Omega[0] * 100
+        roi_periodically[i] = ((amount_Omega[i] - amount_Omega[i - 1]) / amount_Omega[i - 1]) * 100
+
+    # annual return column chart
+    amount_response_omega = ["{:.2f}".format(v) for k, v in amount_Omega.items()]
+    periods = [date.strftime("%Y/%m/%d") for date in get_period_date()]
+    return amount_response_mv, amount_response_cvar, amount_response_omega, periods

@@ -829,7 +829,7 @@ def get_recommended_model_by_user(user_id):
 
 
 def fn_test(request):
-    return render(request, 'portfolio/ZoomableSunburst.html', locals())
+    return render(request, 'portfolio/bar-chart.html', locals())
     # amount_response_mv, amount_response_cvar, amount_response_omega, periods = get_all_model_value()
     # return HttpResponse(amount_response_mv)
 
